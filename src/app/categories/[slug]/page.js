@@ -35,6 +35,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {

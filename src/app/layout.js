@@ -6,6 +6,7 @@ import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetadata";
 
+
 const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
