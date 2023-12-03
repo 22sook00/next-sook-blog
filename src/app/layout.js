@@ -1,9 +1,11 @@
+import Script from "next/script";
+import { Inter, Manrope, Rubik } from "next/font/google";
 import "./globals.css";
 import { cx } from "@/src/utils";
-import { Inter, Manrope, Rubik } from "next/font/google";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
-import siteMetadata from "../utils/siteMetaDate";
+import siteMetadata from "../utils/siteMetadata";
+
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -24,6 +26,7 @@ export const metadata = {
     default: siteMetadata.title, // a default is required when creating a template
   },
   description: siteMetadata.description,
+  //https://nextjs.org/docs/app/api-reference/functions/generate-metadata#opengraph
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
@@ -62,6 +65,14 @@ export default function RootLayout({ children }) {
           "font-mr bg-light dark:bg-dark"
         )}
       >
+        {/*https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection*/}
+        <Script id="theme-switcher" strategy="beforeInteractive">
+          {`if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }`}
+        </Script>
         <Header />
         {children}
         <Footer />
