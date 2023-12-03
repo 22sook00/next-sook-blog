@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
+import { GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
 import Link from "next/link";
-//import siteMetadata from "@/src/utils/siteMetaData";
+import siteMetadata from "@/src/utils/siteMetaData";
 
 const Footer = () => {
   const {
@@ -42,7 +42,7 @@ const Footer = () => {
       </form>
       <div className="flex items-center mt-8">
         <a
-          //href={siteMetadata.linkedin}
+          href={siteMetadata.linkedin}
           className="inline-block w-6 h-6 mr-4"
           aria-label="Reach out to me via LinkedIn"
           target="_blank"
@@ -50,7 +50,7 @@ const Footer = () => {
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          //href={siteMetadata.twitter}
+          href={siteMetadata.twitter}
           className="inline-block w-6 h-6 mr-4"
           aria-label="Reach out to me via Twitter"
           target="_blank"
@@ -58,20 +58,12 @@ const Footer = () => {
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
         <a
-          //href={siteMetadata.github}
+          href={siteMetadata.github}
           className="inline-block w-6 h-6 mr-4 fill-light"
           aria-label="Check my profile on Github"
           target="_blank"
         >
           <GithubIcon className="fill-light dark:fill-dark  hover:scale-125 transition-all ease duration-200" />
-        </a>
-        <a
-          //href={siteMetadata.dribbble}
-          className="inline-block w-6 h-6 mr-4"
-          aria-label="Check my profile on Dribbble"
-          target="_blank"
-        >
-          <DribbbleIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>
 
