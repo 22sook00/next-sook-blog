@@ -6,7 +6,6 @@ import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetadata";
 
-
 const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
@@ -14,6 +13,11 @@ const rubik = Rubik({
 });
 
 const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mr",
+});
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mr",
@@ -60,9 +64,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={cx(
-          rubik.variable,
-          //manrope.variable,
-          "font-mr bg-light dark:bg-dark"
+          //rubik.variable,
+          inter.variable,
+          "font-mr bg-light dark:bg-dark text-default"
         )}
       >
         {/*https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection*/}

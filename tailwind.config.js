@@ -6,14 +6,20 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
+  //important: true,
   theme: {
     extend: {
       colors: {
-        dark: "#1b1b1b",
+        default: "#0f172a",
+        dark: "#18181c",
+        grayDark: "#334155",
         light: "#fff",
-        accent: "#7B00D3",
-        accentDark: "#ffdb4d",
-        gray: "#747474",
+        hover: "#94a3b81a",
+        accentLight: "#dbeafe",
+        accent: "#38bdf8",
+        accentDark: "#0284c7",
+        gray: "#9ca3af",
+        grayLight: "#d9d9de33",
       },
       fontFamily: {
         mr: ["var(--font-mr)"],
@@ -31,7 +37,7 @@ module.exports = {
       screens: {
         sxl: "1180px",
         // @media (min-width: 1180px){...}
-        xs: "480px",
+        sm: "480px",
         // @media (min-width: 480px){...}
       },
     },

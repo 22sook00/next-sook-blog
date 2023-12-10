@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .default-layout {
+    @apply m-auto px-5 lg:px-8 max-w-[1240px] sm:px-10  flex items-center justify-between;
+  }
+  .title {
+    @apply w-full inline-block text-default dark:text-light capitalize font-bold mb-6 text-3xl sm:text-4xl  md:text-5xl;
+  }
+  .sub-title {
+    @apply w-full inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
+  }
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+  .test-border {
+    @apply border-2 border-red-500;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -80,4 +98,9 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   text-align: center;
   font-size: 1rem;
   color: #747474;
+}
+.beforeHighlight {
+  > div > div > h2 {
+    white-space: pre-wrap !important;
+  }
 }
