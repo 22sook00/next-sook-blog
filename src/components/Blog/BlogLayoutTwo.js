@@ -6,7 +6,7 @@ import React from "react";
 
 import { Badge, Highlight } from "react-ts-sook-ui";
 
-const BlogLayoutTwo = ({ blog }) => {
+const BlogLayoutTwo = ({ blog, themeColor }) => {
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light">
       <Link
@@ -26,9 +26,9 @@ const BlogLayoutTwo = ({ blog }) => {
       </Link>
 
       <section className="col-span-12  lg:col-span-8 w-full h-full">
-        <Badge size="lg" text={blog.tags[0]} theme="success" />
+        <Badge text={blog.tags[0]} theme={themeColor} />
         <Link href={blog.url} className="inline-block my-1 beforeHighlight">
-          <Highlight size="sm" text={blog.title} theme="success" />
+          <Highlight size="sm" text={blog.title} theme={themeColor} />
         </Link>
 
         <span className="inline-block w-full capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">

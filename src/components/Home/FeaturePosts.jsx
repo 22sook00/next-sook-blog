@@ -1,29 +1,39 @@
-import { sortBlogs } from "@/src/utils";
 import React from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
 import BlogLayoutTwo from "../Blog/BlogLayoutTwo";
+import { sortBlogs } from "@/src/utils";
 
-const FeaturedPosts = ({ blogs }) => {
+import { CATEGORY_OBJ } from "@/src/utils/categoryData";
+
+const HomeCoverSection = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
-  return (
-    <section className="w-full mt-16 sm:mt-24  md:mt-32  flex flex-col items-center justify-center">
-      <h2 className="w-full inline-block font-bold capitalize text-2xl md:text-4xl text-default dark:text-light">
-        Featured Posts
-      </h2>
 
-      <div className="grid grid-cols-2 grid-rows-2 gap-6  mt-10 sm:mt-16">
-        <article className=" col-span-2  sxl:col-span-1 row-span-2 relative">
-          <BlogLayoutOne blog={sortedBlogs[1]} />
+  return (
+    <section className="w-full flex-col-center items-start">
+      <h2 className="title">많이 본 포스팅</h2>
+
+      <div className="w-full grid grid-rows-2 grid-flow-col md:grid-cols-[minmax(300px,_450px)_1fr] mt-4 gap-6 ">
+        <article className="row-span-2 relative">
+          <BlogLayoutOne
+            blog={sortedBlogs[1]}
+            themeColor={CATEGORY_OBJ[sortedBlogs[1].tags[0]].theme}
+          />
         </article>
-        <article className=" col-span-2 sm:col-span-1 row-span-1 relative">
-          <BlogLayoutTwo blog={sortedBlogs[2]} />
+        <article className="row-span-1 relative">
+          <BlogLayoutTwo
+            blog={sortedBlogs[2]}
+            themeColor={CATEGORY_OBJ[sortedBlogs[2].tags[0]].theme}
+          />
         </article>
-        <article className="col-span-2 sm:col-span-1 row-span-1 relative">
-          <BlogLayoutTwo blog={sortedBlogs[3]} />
+        <article className=" row-span-1 relative">
+          <BlogLayoutTwo
+            blog={sortedBlogs[3]}
+            themeColor={CATEGORY_OBJ[sortedBlogs[3].tags[0]].theme}
+          />
         </article>
       </div>
     </section>
   );
 };
 
-export default FeaturedPosts;
+export default HomeCoverSection;

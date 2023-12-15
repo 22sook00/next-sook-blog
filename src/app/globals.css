@@ -4,10 +4,13 @@
 
 @layer components {
   .default-layout {
-    @apply m-auto px-5 lg:px-8 max-w-[1240px] sm:px-10  flex items-center justify-between;
+    @apply m-auto px-5 lg:px-8 max-w-[1240px] sm:px-10  flex flex-col items-center justify-between;
+  }
+  .default-input {
+    @apply text-xs border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2;
   }
   .title {
-    @apply w-full inline-block text-default dark:text-light capitalize font-bold mb-6 text-3xl sm:text-4xl  md:text-5xl;
+    @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
   }
   .sub-title {
     @apply w-full inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
@@ -15,6 +18,10 @@
   .flex-col-center {
     @apply flex flex-col items-center justify-center;
   }
+  .flex-row-center {
+    @apply flex items-center justify-center;
+  }
+
   .test-border {
     @apply border-2 border-red-500;
   }

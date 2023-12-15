@@ -8,10 +8,19 @@ import { slug } from "github-slugger";
 import { Badge, Highlight } from "react-ts-sook-ui";
 import { useRouter } from "next/navigation";
 
-const BlogLayoutOne = ({ blog }) => {
+const BlogLayoutOne = ({ blog, themeColor }) => {
+  console.log(`
+  ███████╗ ██████╗  ██████╗ ██╗  ██╗
+  ██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝
+  ███████╗██║   ██║██║   ██║█████╔╝ 
+  ╚════██║██║   ██║██║   ██║██╔═██╗ 
+  ███████║╚██████╔╝╚██████╔╝██║  ██╗
+  ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+  `);
   const router = useRouter();
+
   return (
-    <div className="cursor-pointer group overflow-hidden">
+    <div className="cursor-pointer group overflow-hidden dark:text-light">
       <div className="  w-full h-full  bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10 overflow-hidden">
         <Link href={blog.url}>
           <Image
@@ -28,10 +37,10 @@ const BlogLayoutOne = ({ blog }) => {
       </div>
       <section className="mt-10">
         <div onClick={() => router.push(`/categories/${slug(blog.tags[0])}`)}>
-          <Badge size="lg" text={blog.tags[0]} />
+          <Badge size="lg" text={blog.tags[0]} theme={themeColor} />
         </div>
         <Link href={blog.url} className="mt-6 beforeHighlight">
-          <Highlight size="lg" text={blog.title} />
+          <Highlight size="lg" text={blog.title} theme={themeColor} />
         </Link>
         <span className="inline-block w-full capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">
           {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}

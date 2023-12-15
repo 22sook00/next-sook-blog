@@ -1,0 +1,26 @@
+---
+title: "command not found firebases"
+description: How to deploy your Next.js apps on Vercel.
+image: "../../public/blogs/emile-perron-xrVDYZRGdw4-unsplash.jpg"
+publishedAt: "2023-12-15"
+updatedAt: "2023-12-16"
+author: "22sook00"
+isPublished: true
+tags:
+  - bug
+  - framework
+---
+
+파이어베이스 배포를 위한 진행과정 중 CLI 창에서 firebase login 을 해야한다.
+
+**npm install -g firebase-tools** 를 설치한 후 firebase login 을 진행해야 하는데 command not found firebase 가 발생하는 상황.
+
+CLI 에서 자동설치 스크립트 코드를 입력해 바로 해결할 수 있었다.
+
+자동설치 스크립트 :
+
+```
+curl -sL https://firebase.tools | bash
+```
+
+출처 : [코딩애플](https://codingapple.com/forums/topic/command-not-found-firebase/)

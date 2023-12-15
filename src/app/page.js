@@ -7,10 +7,9 @@ import "react-ts-sook-ui/dist/style.css";
 
 export default function Home() {
   return (
-    <main className="default-layout  flex flex-col items-center justify-center">
+    <main className="default-layout gap-28 flex flex-col items-center justify-center">
       <HomeCoverSection blogs={allBlogs} />
-      {/*<FeaturedPosts blogs={allBlogs} />*/}
-      <div>카테고리 Sticky</div>
+      <FeaturedPosts blogs={allBlogs} />
       <RecentPosts blogs={allBlogs} />
     </main>
   );
