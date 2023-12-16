@@ -1,50 +1,73 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Tag from "../Elements/Tag";
+"use client";
+import React, { useState } from "react";
 import { sortBlogs } from "@/src/utils";
-import { slug } from "github-slugger";
+import SearchList from "../Search/SearchList";
+import { SearchIcon } from "../Icons";
 
 const HomeCoverSection = ({ blogs }) => {
-  const sortedBlogs = sortBlogs(blogs);
-  const blog = sortedBlogs[0];
+  const searchArr = sortBlogs(blogs);
+  const [query, setQuery] = useState("");
+  const [isFocus, setIsFocus] = useState(false);
+  const filteredSearch =
+    query === ""
+      ? searchArr
+      : searchArr?.filter((keyword) => {
+          return (
+            keyword.title
+              .toLowerCase()
+              .replace(/\s+/g, "")
+              .includes(query.toLowerCase().replace(/\s+/g, "")) ||
+            [...keyword.tags][0]
+              .toLowerCase()
+              .replace(/\s+/g, "")
+              .includes(query.toLowerCase().replace(/\s+/g, ""))
+          );
+        });
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    setIsFocus(true);
+  };
+  const handleClose = () => {
+    setQuery("");
+    setIsFocus(false);
+  };
+
   return (
-    <div className="w-full inline-block">
-      <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[60vh] sm:h-[85vh]">
-        <div
-          className="absolute top-0 left-0 bottom-0 right-0 h-full
-            bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0
-            "
-        />
-        <Image
-          src={blog.image.filePath.replace("../public", "")}
-          placeholder="blur"
-          blurDataURL={blog.image.blurhashDataUrl}
-          alt={blog.title}
-          fill
-          className="w-full h-full object-center object-cover rounded-3xl -z-10"
-          sizes="100vw"
-          priority
-        />
-        <div className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12  lg:p-16 flex flex-col items-start justify-center z-0 text-light">
-          <Tag link={`/categories/${slug(blog.tags[0])}`} name={blog.tags[0]} />
-          <Link href={blog.url} className="mt-6">
-            <h1 className="font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl">
-              <span
-                className="bg-gradient-to-r from-accent to-accent dark:from-accentDark/50 
-                dark:to-accentDark/50 bg-[length:0px_6px]
-                hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 "
-              >
-                {blog.title}
-              </span>
-            </h1>
-          </Link>
-          <p className="hidden  sm:inline-block mt-4 md:text-lg lg:text-xl font-in">
-            {blog.description}
-          </p>
+    <section className="">
+      <div className="w-full mt-20  flex-col-center text-center text-grayDark">
+        <div className="flex gap-2 items-center">
+          <h2 className="title ">Hello </h2>
+          <h2 className="animate-shake  title ">👋🏻</h2>
         </div>
-      </article>
-    </div>
+        <p className="text-lg">
+          프론트엔드 개발자, SookDev 의 블로그에 오신것을 환영합니다.
+        </p>
+        <p className="text-lg">공부한 것들을 기록하고 나누는 공간입니다.</p>
+
+        <p className="pre text-xs text-gray mt-1">
+          Welcome to the blog of front-end developer, SookDev.
+          <br />
+          This is a blog where I record and share what I have studied.
+        </p>
+        <div className="mt-8 flex w-[240px] gap-2 items-center justify-center mb-2 relative">
+          <input
+            placeholder="Search keyword"
+            className="default-input w-full h-[34px] "
+            onChange={handleChange}
+            value={query}
+          />
+          <SearchIcon className="absolute right-3 " />
+
+          {isFocus && (
+            <SearchList
+              filteredSearch={filteredSearch}
+              query={query}
+              handleClose={handleClose}
+            />
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

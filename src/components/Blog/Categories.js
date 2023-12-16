@@ -3,16 +3,21 @@ import React from "react";
 import Category from "./Category";
 
 const Categories = ({ categories, currentSlug }) => {
+  const allCategory = Object.entries(categories);
   return (
-    <div className=" px-0 md:px-10 sxl:px-20 mt-10 border-t-2 text-dark dark:text-light border-b-2 border-solid border-dark dark:border-light py-4 flex items-start flex-wrap font-medium mx-5 md:mx-10">
-      {categories.map((cat) => (
-        <Category
-          key={cat}
-          link={`/categories/${cat}`}
-          name={cat}
-          active={currentSlug === slug(cat)}
-        />
-      ))}
+    <div className="flex gap-4 flex-wrap p-8 bg-grayLight my-8 rounded-md shadow-sm ">
+      {allCategory.map((cat) => {
+        const decode = decodeURIComponent(cat[0].replace(/\+/g, " "));
+        return (
+          <Category
+            key={cat[0]}
+            link={`/categories/${decode}`}
+            name={decode}
+            active={currentSlug === slug(decode)}
+            length={cat[1]}
+          />
+        );
+      })}
     </div>
   );
 };

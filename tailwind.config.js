@@ -6,14 +6,21 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
+  important: true,
   theme: {
     extend: {
       colors: {
-        dark: "#1b1b1b",
+        default: "#0f172a",
+        dark: "#18181c",
+        grayDark: "#334155",
         light: "#fff",
-        accent: "#7B00D3",
-        accentDark: "#ffdb4d",
-        gray: "#747474",
+        hover: "#94a3b81a",
+        accentLight: "#dbeafe",
+        accent: "#2b96ed",
+        accentDark: "#0284c7",
+        gray: "#9ca3af",
+        grayLight: "#edf1f5",
+        line: "#e5e7eb",
       },
       fontFamily: {
         mr: ["var(--font-mr)"],
@@ -21,17 +28,30 @@ module.exports = {
       },
       animation: {
         roll: "roll 24s linear infinite",
+        shake: "shake .8s ease infinite",
       },
       keyframes: {
         roll: {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        shake: {
+          "0%": {
+            transform: "'rotate(0deg)'",
+          },
+          "50%": {
+            transform: "rotate(25deg)",
+          },
+
+          "100%": {
+            transform: "rotate(0deg)",
+          },
+        },
       },
       screens: {
         sxl: "1180px",
         // @media (min-width: 1180px){...}
-        xs: "480px",
+        sm: "480px",
         // @media (min-width: 480px){...}
       },
     },

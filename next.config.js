@@ -4,7 +4,8 @@ const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
   compiler: {
-    removeConsole: true,
+    reactStrictMode: false,
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 

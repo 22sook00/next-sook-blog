@@ -6,7 +6,7 @@ export function useThemeSwitch() {
   const preferDarkQuery = "(prefers-color-schema:dark)";
   const storageKey = "theme";
 
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
 
   const toggleTheme = (theme) => {
     if (theme === "dark") {
