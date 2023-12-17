@@ -4,7 +4,7 @@ import "./globals.css";
 import { cx } from "@/src/utils";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
-import siteMetadata from "../utils/siteMetadata";
+import { siteMetadata } from "../utils/siteMetaData";
 
 const rubik = Rubik({
   subsets: ["latin"],

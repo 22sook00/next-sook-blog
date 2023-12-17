@@ -1,5 +1,5 @@
 // please update required information
-const siteMetadata = {
+export const siteMetadata = {
   title: "Next.js Blog With Tailwind CSS and Contentlayer",
   author: "22SOOK00",
   headerTitle: "Next.js Blog",
@@ -15,5 +15,3 @@ const siteMetadata = {
   linkedin: "https://www.linkedin.com/in/22sook00/",
   locale: "en-US",
 };
-
-module.exports = siteMetadata;

@@ -1,6 +1,6 @@
 import React from "react";
 import { allBlogs } from "contentlayer/generated";
-import siteMetadata from "@/src/utils/siteMetadata";
+import { siteMetadata } from "../utils/siteMetaData";
 import RenderMdx from "@/src/components/Blog/RenderMdx";
 import BlogDetailBanner from "@/src/components/Blog/BlogDetailBanner";
 
