@@ -14,7 +14,7 @@ const BlogPage = ({ params }) => {
   return (
     <article className="default-layout">
       <BlogDetailBanner blog={blog} slug={params.slug} />
-      <div className=" grid grid-cols-[3fr_1fr]  lg:gap-8  px-5 ">
+      <div className=" grid grid-cols-[3fr_1fr] gap-6  px-5 ">
         <RenderMdx blog={blog} />
         <BlogToc blog={blog} />
       </div>

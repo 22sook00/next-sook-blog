@@ -8,7 +8,7 @@ import { Badge, Highlight } from "react-ts-sook-ui";
 
 const BlogLayoutTwo = ({ blog, themeColor }) => {
   return (
-    <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light">
+    <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light border border-grayLight rounded-md p-6 bg-grayLight shadow-md">
       <Link
         href={blog.url}
         className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"

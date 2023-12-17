@@ -20,7 +20,7 @@ const BlogLayoutOne = ({ blog, themeColor }) => {
   const router = useRouter();
 
   return (
-    <div className="cursor-pointer group overflow-hidden dark:text-light">
+    <div className="cursor-pointer group overflow-hidden dark:text-light border border-grayLight rounded-md p-7 bg-grayLight shadow-md">
       <div className="  w-full h-full  bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10 overflow-hidden">
         <Link href={blog.url}>
           <Image

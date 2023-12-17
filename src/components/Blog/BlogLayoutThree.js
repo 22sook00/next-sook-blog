@@ -10,7 +10,11 @@ import { CATEGORY_OBJ } from "@/src/utils/categoryData";
 const BlogLayoutThree = ({ blog }) => {
   const themeColor = CATEGORY_OBJ[blog.tags[0]]?.theme;
   return (
-    <div className="group flex flex-col items-center text-default dark:text-light">
+    <div
+      className="group 
+    h-[350px]
+    flex flex-col items-center text-default dark:text-light border border-grayLight rounded-md  shadow"
+    >
       <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
         <Image
           src={blog.image.filePath.replace("../public", "")}
@@ -24,14 +28,14 @@ const BlogLayoutThree = ({ blog }) => {
         />
       </Link>
 
-      <div className="flex flex-col w-full mt-4">
+      <div className="flex flex-col gap-1 w-full mt-4 bg-grayLight p-6 h-[140px]">
         <Badge text={blog.tags[0]} theme={themeColor} />
 
-        <Link href={blog.url} className="inline-block my-1 beforeHighlight">
+        <Link href={blog.url} className="inline-block my-1 textEllipsis ">
           <Highlight size="sm" text={blog.title} theme={themeColor} />
         </Link>
 
-        <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">
+        <span className="mt-3 capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">
           {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
         </span>
       </div>
