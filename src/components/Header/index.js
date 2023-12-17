@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { MoonIcon, SunIcon } from "../Icons";
-import siteMetadata from "@/src/utils/siteMetaData";
 import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
 import { cx } from "@/src/utils";

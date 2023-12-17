@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { GithubIcon, LinkedinIcon, LinkIcon } from "../Icons";
+import { LinkIcon } from "../Icons";
 import Link from "next/link";
-import siteMetadata from "@/src/utils/siteMetaData";
 
 const Footer = () => {
   const {
