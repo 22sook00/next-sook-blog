@@ -10,7 +10,6 @@ import BlogToc from "@/src/components/Blog/BlogToc";
 const BlogPage = ({ params }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   // -> generaMetadata 에도 동일하게 적용.
-  //console.log("PARAMS", params, "BLOG::", blog);
   return (
     <article className="default-layout">
       <BlogDetailBanner blog={blog} slug={params.slug} />
