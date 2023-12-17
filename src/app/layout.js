@@ -2,9 +2,9 @@ import Script from "next/script";
 import { Inter, Manrope, Rubik } from "next/font/google";
 import "./globals.css";
 import { cx } from "@/src/utils";
+import { siteMetadata } from "@/src/utils/siteMetaData.js";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
-import { siteMetadata } from "../utils/siteMetaData";
 
 const rubik = Rubik({
   subsets: ["latin"],
