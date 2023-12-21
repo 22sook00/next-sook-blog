@@ -13,7 +13,7 @@
     @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
   }
   .sub-title {
-    @apply w-full inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
+    @apply w-full inline-block text-default dark:text-light capitalize font-semibold mb-6 text-xl   md:text-2xl;
   }
   .flex-col-center {
     @apply flex flex-col items-center justify-center;
@@ -120,4 +120,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
       word-break: break-word;
     }
   }
+}
+li {
+  line-height: 22px;
 }

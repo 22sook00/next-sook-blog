@@ -39,13 +39,11 @@ const HomeCoverSection = ({ blogs }) => {
           <h2 className="title ">Hello </h2>
           <h2 className="animate-shake  title ">👋🏻</h2>
         </div>
-        <p className="text-lg">
-          프론트엔드 개발자, SookDev 의 블로그에 오신것을 환영합니다.
-        </p>
+        <p className="text-lg">SookDev 의 기술블로그에 오신것을 환영합니다.</p>
         <p className="text-lg">공부한 것들을 기록하고 나누는 공간입니다.</p>
 
         <p className="pre text-xs text-gray mt-1">
-          Welcome to the blog of front-end developer, SookDev.
+          Welcome to the blog "SookDev".
           <br />
           This is a blog where I record and share what I have studied.
         </p>

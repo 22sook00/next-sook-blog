@@ -67,6 +67,6 @@ export const CATEGORY_OBJ = {
     theme: "error",
     ko: "버그",
     desc: "에러를 해결한 과정과 경험을 담은 글입니다.",
-    type: ["bug", "버그", "에러"],
+    type: ["bug", "error", "버그", "에러"],
   },
 };
