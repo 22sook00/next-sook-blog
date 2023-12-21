@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogToc = ({ blog }) => {
   return (
-    <div className="">
+    <aside className="">
       <details
         className="border border-line dark:border-light shadow-md text-default dark:text-light rounded-lg p-6 sticky top-20 max-h-[80vh]  overflow-y-auto"
         open
@@ -38,7 +38,7 @@ const BlogToc = ({ blog }) => {
           })}
         </ul>
       </details>
-    </div>
+    </aside>
   );
 };
 

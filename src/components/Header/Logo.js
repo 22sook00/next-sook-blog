@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import profileImg from "@/public/profile-img.png";
+import profileImg from "@/public/logo.png";
 
 const Logo = () => {
   return (
     <Link href="/" className="flex items-center text-default dark:text-light">
-      {/*<div className=" w-12 h-16 md:w-16 rounded-full overflow-hidden border border-solid border-dark dark:border-gray  mr-2 md:mr-4">
+      <div className=" w-10 h-10 rounded-full overflow-hidden shadow-md  mr-2">
         <Image
           src={profileImg}
           alt="22sook00 logo"
@@ -13,7 +13,7 @@ const Logo = () => {
           sizes="20vw"
           priority
         />
-      </div>*/}
+      </div>
       <span className="font-bold dark:font-semibold text-lg md:text-xl">
         SookDev
       </span>

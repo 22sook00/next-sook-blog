@@ -1,0 +1,175 @@
+---
+title: "프론트엔드에서 대용량 데이터를 다루는 방법"
+description: "코드 스플릿팅와 불필요한 렌더링을 최소화 하여 핫딜 컴포넌트를 개선하는 과정에 대한 글입니다."
+image: "../../public/stacks/library.png"
+publishedAt: "2023-12-17"
+updatedAt: "2023-12-17"
+author: "22sook00"
+isPublished: true
+tags:
+  - code-quality
+---
+
+# Love trip 프로젝트 설정
+
+## yarn berry 설치
+
+```
+yarn create react-app react-ts-love-trip --template typescript
+```
+
+설치 후 node modules 삭제 (yarn.lock 은 지우면 안된다.) <br/>
+yarn set version berry
+: berry 로 yarn 의 버전을 바꿔준다.
+
+> Usage Error: This tool requires a Node version compatible with >=18.12.0 (got 18.7.0). Upgrade Node, or set `YARN_IGNORE_NODE=1` in your environment.
+
+해당 에러는 내가 가진 노드 버전때문에 생기는 에러로, 해당 문구처럼 YARN_IGNORE_NODE=1 를 명령어에 추가하면 문제가 해결된다. <br/>
+YARN_IGNORE_NODE=1 yarn set version berry 혹은
+YARN_IGNORE_NODE=1 yarn set version 3.6.1
+
+설치 후 .yarnrc.yml 설정파일이 생기면 yarn 이 잘 설치 된것이다.
+
+**.nodeLinker: pnp**
+
+- yarnrc.yml 파일에 nodeLinker: pnp 를 추가하여 pnp 를 사용할것이라고 알려준 후 yarn install 을 해준다.
+
+- yarn dlx @yarnpkg/sdks vscode
+  설치된 yarn 디렉토리 내부에 cache 디렉토리가 생성되는데, 이곳에는 node_modules 가 아닌 zip 파일로 관리되는 파일들이 나열된다.
+  이 파일들을 vs 코드가 잘 읽을 수 있도록 도와주는 명령어다.<br/>
+  설치 후 vscode 디렉토리가 생성되고 내부에는 settings.json 파일이 추가된다.
+  settings.json 설정파일에는 타입스크립트, eslint, prettier 와 같은 설정들을 vscode 가 잘 인식할 수 있도록 해준다.
+
+- git ignore
+  node_modules 를 git ignore 에 추가하듯이 yarn 설치 관련 파일들도 git 에 올라가지 않도록 처리해주어야 한다.
+
+```
+# zero install
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+```
+
+## eslint 파일 분리
+
+yarn add -D eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-config-react-app
+
+해당 명령어로 eslint 와 프리티어를 설치하면 package.json 에 추가가 된다.
+이것을 별도의 파일로 나누어 분리를 하려고 한다.
+package.json 에서는 eslintConfig 코드를 삭제해주고
+
+```
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+```
+
+.eslintrc 파일을 생성하여 다음과 같이 추가해준다.
+
+```
+{
+  "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+      "prettier/prettier": "error"
+  }
+}
+```
+
+.eslintrc , .prettierrc 를 각각 추가해 주었으니 마찬가지로 yarn dlx @yarnpkg/sdks vscode 명령어로 파싱이 가능하도록 해준다.
+하지만 매번 설정을 적용해줘야하는 번거로움이 있으므로
+package.json 파일 script 내부에 lint 관련 설정에 대한 코드를 추가해준다.
+
+```
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
+```
+
+## alias 설정
+
+yarn add -D @craco/craco craco-alias
+
+tsconfig.paths.json 파일을 생성하여 원하는 값으로 alias 설정을 해준다.
+
+```
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+          "@/*": ["src/*"],
+          "@components/*": ["src/components/*"],
+          "@styles/*": ["src/styles/*"],
+          ...
+      }
+  }
+}
+```
+
+해당 설정값을 사용하기 위해서 craco.config 에 정의를 해주어야 한다.
+
+```
+const CracoAlias = require('craco-alias')
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoAlias,
+      options: {
+        source: 'tsconfig',
+        tsConfigPath: 'tsconfig.paths.json',
+      },
+    },
+  ],
+  babel: {
+    presets: [
+      [
+        '@babel/preset-react',
+        { runtime: 'automatic', importSource: '@emotion/react' },
+      ],
+    ],
+    plugins: ['@emotion/babel-plugin'],
+  },
+}
+```
+
+tsconfig 에도 craco path 에 대한 존재를 알려주어야 한다.
+tsconfig.paths 경로를 extends,include 에 추가해준다.
+
+```
+  "extends": "./tsconfig.paths.json",
+  ...
+  "include": [
+    "src",
+    "tsconfig.paths.json"
+  ]
+```
+
+마지막으로 craco 로 alias 설정이 되어 있으므로 package.json script 값을 craco 로 변경해준다.
+
+## emotion 설치
+
+yarn add @emotion/react @emotion/styled
+emotion 사용 시 babel 에 대한 설정도 해주어야 한다.
+yarn add @babel/preset-react @emotion/babel-plugin @emotion/core @emotion/css
+
+일반적으로 리액트에서 엘리먼트에 스타일을 직접 적용하는것은 알 수 없는 문법이기 때문에 tsconfig.json 에 별도의 설정을 해주어야 한다.
+"jsxImportSource": "@emotion/react"
+라는 명령코드를 넣어 jsx 에서 emotion 스타일을 사용하겠다 라고 알려준다.
+
+## firebase 설정
+
+프로젝트에서 firebase 를 이용하여 auth와 storage 를 사용하려고 한다.
+파이어베이스에서
+
+---

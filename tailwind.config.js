@@ -19,7 +19,7 @@ module.exports = {
         accent: "#2b96ed",
         accentDark: "#0284c7",
         gray: "#9ca3af",
-        grayLight: "#edf1f5",
+        grayLight: "#f4f6f8",
         line: "#e5e7eb",
       },
       fontFamily: {
