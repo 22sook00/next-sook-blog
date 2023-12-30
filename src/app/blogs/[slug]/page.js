@@ -7,6 +7,8 @@ import BlogDetailBanner from "@/src/components/Blog/BlogDetailBanner";
 import "react-ts-sook-ui/dist/style.css";
 import BlogToc from "@/src/components/Blog/BlogToc";
 
+//import { TOKEN, DATABASE_ID, VERSION } from "@/src/config";
+
 const BlogPage = ({ params }) => {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   // -> generaMetadata 에도 동일하게 적용.
@@ -26,6 +28,7 @@ export default BlogPage;
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
 }
+
 //동적 메타데이터 세팅
 export async function generateMetadata({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
