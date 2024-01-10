@@ -1,4 +1,4 @@
-import GithubSlugger from "github-slugger";
+//import GithubSlugger from "github-slugger";
 import { getPages } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
 
@@ -7,7 +7,7 @@ import { THUMBNAIL_OBJ, BADGE_OBJ } from "@/src/utils/categoryData";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
 
-const slugger = new GithubSlugger();
+//const slugger = new GithubSlugger();
 
 const CategoryPage = async ({ params }) => {
   const allCategories = ["all"];
@@ -66,25 +66,6 @@ const CategoryPage = async ({ params }) => {
 };
 
 export default CategoryPage;
-
-export async function generateStaticParams() {
-  const categories = [];
-  const paths = [{ slug: "all" }];
-  const allPosts = await getPages();
-  allPosts.results.map((blog) => {
-    const tags = blog.properties.tag.multi_select;
-    tags.map((tag) => {
-      let slugified = slugger.slug(tag);
-      //let slugified = tag;
-      if (!categories.includes(slugified)) {
-        categories.push(slugified);
-        paths.push({ slug: slugified });
-      }
-    });
-  });
-
-  return paths;
-}
 
 export async function generateMetadata({ params }) {
   return {
