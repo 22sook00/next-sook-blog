@@ -9,9 +9,9 @@ const Home = async () => {
 
   return (
     <main className="default-layout gap-28 flex flex-col items-center justify-center">
-      {/*<HomeCoverSection blogs={allBlogs} />
+      <HomeCoverSection blogs={allBlogs} />
       <FeaturedPosts blogs={allBlogs} />
-      <RecentPosts blogs={allBlogs} />*/}
+      <RecentPosts blogs={allBlogs} />
     </main>
   );
 };
