@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { format } from "date-fns";
 
 import Link from "next/link";
@@ -7,6 +7,7 @@ import Image from "next/image";
 import { slug } from "github-slugger";
 import { Badge, Highlight } from "react-ts-sook-ui";
 import { useRouter } from "next/navigation";
+import "react-ts-sook-ui/dist/style.css";
 
 const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
   const router = useRouter();

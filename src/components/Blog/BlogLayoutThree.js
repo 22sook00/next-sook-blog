@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Badge, Highlight } from "react-ts-sook-ui";
+import "react-ts-sook-ui/dist/style.css";
 
 const BlogLayoutThree = ({ blog, themeColor, thumbnailImg }) => {
   return (

@@ -24,7 +24,6 @@ const RecentPosts = ({ blogs }) => {
         {sortBlogs(blogs)
           .slice(0, 6)
           .map((blog, index) => {
-            //console.log("blog", blog);
             return (
               <article key={index} className="col-span-1 row-span-1 relative">
                 <BlogLayoutThree
