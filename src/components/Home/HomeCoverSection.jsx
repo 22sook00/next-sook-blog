@@ -15,7 +15,7 @@ const HomeCoverSection = ({ blogs }) => {
 
   //`);
 
-  const searchArr = blogs.map((el) => el.properties);
+  const searchArr = blogs?.map((el) => el.properties);
   const [query, setQuery] = useState("");
   const [isFocus, setIsFocus] = useState(false);
   const filteredSearch =

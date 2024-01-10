@@ -61,7 +61,6 @@ export const getNotionData = async (slug) => {
     options
   );
   const notionData = await res.json();
-  //console.log("RES:", notionData);
   return notionData.results;
 };
 

@@ -22,22 +22,22 @@ const HomeCoverSection = ({ blogs }) => {
           />
         </article>
         <article className="row-span-1 relative">
-          {/*<BlogLayoutTwo
+          <BlogLayoutTwo
             blog={convertBlogData(blogs, 2)}
             themeColor={BADGE_OBJ[convertBlogData(blogs, 2).badges[0]?.color]}
             thumbnailImg={
               THUMBNAIL_OBJ[convertBlogData(blogs, 2).badges[0]?.name]
             }
-          />*/}
+          />
         </article>
         <article className=" row-span-1 relative">
-          {/*<BlogLayoutTwo
+          <BlogLayoutTwo
             blog={convertBlogData(blogs, 3)}
             themeColor={BADGE_OBJ[convertBlogData(blogs, 3).badges[0]]?.color}
             thumbnailImg={
               THUMBNAIL_OBJ[convertBlogData(blogs, 3).badges[0]?.name]
             }
-          />*/}
+          />
         </article>
       </div>
     </section>
