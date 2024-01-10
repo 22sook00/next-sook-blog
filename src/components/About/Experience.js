@@ -14,9 +14,9 @@ const Experience = () => {
                 2022-09 ~ 현재
               </span>
               <span className="text-sm">스퀘어스</span>
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
               </span>
             </div>
             <div className="flex gap-2">
