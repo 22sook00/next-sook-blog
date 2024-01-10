@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { sortBlogs } from "@/src/utils";
 import SearchList from "../Search/SearchList";
 import { SearchIcon } from "../Icons";
-import { convertBlogData } from "@/src/utils/convert";
 
 const HomeCoverSection = ({ blogs }) => {
   //console.log(`

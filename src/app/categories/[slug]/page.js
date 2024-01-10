@@ -1,8 +1,7 @@
-import GithubSlugger, { slug } from "github-slugger";
+import GithubSlugger from "github-slugger";
 import { getPages } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
 
-import { CATEGORY_OBJ } from "@/src/utils/categoryData";
 import { THUMBNAIL_OBJ, BADGE_OBJ } from "@/src/utils/categoryData";
 
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";

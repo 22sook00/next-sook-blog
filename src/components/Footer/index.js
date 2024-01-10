@@ -1,17 +1,9 @@
 "use client";
 import React from "react";
-import { useForm } from "react-hook-form";
 import { LinkIcon } from "../Icons";
 import Link from "next/link";
 
 const Footer = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
-
   return (
     <footer className=" default-layout flex-col-center items-end gap-1 mt-36 mb-20">
       <Link
