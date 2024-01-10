@@ -94,4 +94,5 @@ export const THUMBNAIL_OBJ = {
   R3f: "/stacks/style.png",
   Emotion: "/stacks/style.png",
   Typescript: "/stacks/ts.png",
+  pwa: "/stacks/pwa.png",
 };

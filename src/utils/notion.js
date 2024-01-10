@@ -11,11 +11,6 @@ export const notionClient = new Client({
 export const getPages = cache(() => {
   return notionClient.databases.query({
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
-    //sorts: {
-    //  timestamp: "last_edited_time",
-    //  direction: "ascending",
-    //},
-    //page_size: 5,
   });
 });
 
