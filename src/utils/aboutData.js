@@ -19,8 +19,8 @@ export const PROJECT_LIST = [
   },
   {
     id: 2,
-    title: "포트폴리오",
-    desc: "R3F 를 이용한 특별한 프론트엔드 포트폴리오 입니다.",
+    title: "3D 규섭이",
+    desc: "사내 캐릭터 규섭이를 R3F 로 구현했습니다.",
     code: "portfolio",
     stack: ["react", "react-three-fiber", "emotion", "vite"],
     link: "https://next-sookdev.vercel.app/",
@@ -47,6 +47,6 @@ export const PROJECT_LIST = [
     desc: "기존 개츠비에서 운영하던 블로그에서 Next.js 앱라우터 버전으로 마이그레이션 한 테크 기록 블로그 입니다.",
     code: "imjangmate",
     stack: ["next.js", "javascript", "tailwindcss", "github-action", "vercel"],
-    link: "https://next-sookdev.vercel.app/",
+    link: "/",
   },
 ];

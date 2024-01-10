@@ -70,3 +70,28 @@ export const CATEGORY_OBJ = {
     type: ["bug", "error", "버그", "에러"],
   },
 };
+export const BADGE_OBJ = {
+  default: "light",
+  green: "default",
+  blue: "success",
+  purple: "success",
+  red: "error",
+  yellow: "warning",
+  pink: "error",
+};
+
+export const THUMBNAIL_OBJ = {
+  Bug: "/stacks/bug.png",
+  Cicd: "/stacks/cicd.png",
+  Cs: "/stacks/cs.png",
+  "Next.js": "/stacks/framework.png",
+  Javascript: "/stacks/js.png",
+  React: "/stacks/library.png",
+  "React-query": "/stacks/library.png",
+  Recoil: "/stacks/library.png",
+  Pwa: "/stacks/pwa.png",
+  Tailwindcss: "/stacks/style.png",
+  R3f: "/stacks/style.png",
+  Emotion: "/stacks/style.png",
+  Typescript: "/stacks/ts.png",
+};

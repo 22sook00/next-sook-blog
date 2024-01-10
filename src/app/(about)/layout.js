@@ -1,11 +1,7 @@
 import InsightRoll from "@/src/components/About/InsightRoll";
 import React from "react";
 
-const insights = [
-  "무슨내용을 넣으면 좋을까",
-  "흠",
-  "💜💕💙💜💕💙💜💕💙💜💕💙💜💕💙",
-];
+const insights = ["feel free to contact", "💜💕💙💜💕💙💜💕💙💜💕💙💜💕💙"];
 
 const AboutLayout = ({ children }) => {
   return (

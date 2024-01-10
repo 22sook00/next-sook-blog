@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Button } from "react-ts-sook-ui";
 
 export default function ContactForm() {
   const {
@@ -8,50 +9,119 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [type, setType] = useState("");
+  const onSubmit = (data) => {
+    //type !== "" && console.log("data", data);
+    if (type !== "") return false;
+    const sendingData = {
+      ...data,
+      reason: type,
+    };
+
+    console.log("sendingData", sendingData);
+  };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-12 text-base xs:text-lg sm:text-xl font-medium leading-relaxed font-in"
+      className="w-full
+      border border-line rounded p-4
+      font-medium leading-relaxed font-in flex  flex-col gap-2"
     >
-      Hello! My name is{" "}
-      <input
-        type="text"
-        placeholder="your name"
-        {...register("name", { required: true, maxLength: 80 })}
-        className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
-        focus:border-gray bg-transparent"
-      />
-      and I want to discuss a potential project. You can email me at
+      <h5>안녕하세요</h5>
+      <div className="flex-row-center justify-start gap-2">
+        저는{" "}
+        <input
+          type="associate"
+          placeholder="소속"
+          maxLength={25}
+          {...register("associate", {})}
+          className="default-input"
+        />
+        의
+        <input
+          type="name"
+          placeholder="이름"
+          maxLength={10}
+          {...register("name", {})}
+          className="default-input"
+        />
+        입니다.
+      </div>
+      SookDev 블로그를 보고, 함께
+      <div className="flex-row-center justify-start  gap-2">
+        <button
+          type="button"
+          onClick={() =>
+            setType((prev) => (prev === "sideProject" ? "" : "sideProject"))
+          }
+          className={`${
+            type === "sideProject"
+              ? "bg-accent text-white"
+              : "bg-white text-accentDark"
+          } text-sm rounded  h-[34px] px-3 border border-accent`}
+        >
+          사이드 프로젝트를 진행하고
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setType((prev) => (prev === "coffeeChat" ? "" : "coffeeChat"))
+          }
+          className={`${
+            type === "coffeeChat"
+              ? "bg-accent text-white"
+              : "bg-white text-accentDark"
+          } text-sm rounded  h-[34px] px-3 border border-accent`}
+        >
+          커피챗
+        </button>
+        <button
+          type="button"
+          onClick={() => setType((prev) => (prev === "work" ? "" : "work"))}
+          className={`${
+            type === "work"
+              ? "bg-accent text-white"
+              : "bg-white text-accentDark"
+          } text-sm rounded h-[34px] px-3 border border-accent`}
+        >
+          일하고
+        </button>{" "}
+        <p>하고 싶어 연락드립니다.</p>
+      </div>
+      <div>관심 있으시면 아래 메일로 회신 부탁드립니다. 감사합니다.</div>
       <input
         type="email"
-        placeholder="your@email"
+        placeholder="email@email.com"
+        maxLength={30}
         {...register("email", {})}
-        className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
-        focus:border-gray bg-transparent"
+        className="default-input"
       />
-      or reach out to me on
-      <input
-        type="tel"
-        placeholder="your phone"
-        {...register("phone number", {})}
-        className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
-        focus:border-gray bg-transparent"
-      />
-      Here are some details about my project: <br />
       <textarea
-        {...register("project details", {})}
-        placeholder="My project is about..."
-        rows={3}
-        className="w-full outline-none border-0 p-0 mx-0 focus:ring-0  placeholder:text-lg border-b border-gray 
-        focus:border-gray bg-transparent"
+        {...register("details", {})}
+        placeholder="추가로 전달하고 싶은 내용이 있으시면 작성 해 주세요 🙌🏻"
+        rows={5}
+        className="
+        default-input
+        resize-none mt-4
+         "
       />
-      <input
+      <button
         type="submit"
-        value="send request"
-        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer"
-      />
+        disabled={type === "" ? true : false}
+        className="
+        bg-accent
+        text-white
+        mt-8 text-sm
+        inline-block capitalize py-2 sm:py-3 px-6 sm:px-8  
+        rounded cursor-pointer
+        disabled:bg-grayLight
+        disabled:text-gray
+        "
+      >
+        {/*노드메일러 구축하기*/}
+        메일 보내기
+      </button>
     </form>
   );
 }
