@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { sortBlogs } from "@/src/utils";
 import SearchList from "../Search/SearchList";
 import { SearchIcon } from "../Icons";
-import { convertBlogData } from "@/src/utils/convert";
 
 const HomeCoverSection = ({ blogs }) => {
   //console.log(`
@@ -17,7 +15,7 @@ const HomeCoverSection = ({ blogs }) => {
 
   //`);
 
-  const searchArr = blogs.map((el) => el.properties);
+  const searchArr = blogs?.map((el) => el.properties);
   const [query, setQuery] = useState("");
   const [isFocus, setIsFocus] = useState(false);
   const filteredSearch =

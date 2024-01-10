@@ -1,19 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { format } from "date-fns";
 
 import Link from "next/link";
 import Image from "next/image";
-import { slug } from "github-slugger";
 import { Badge, Highlight } from "react-ts-sook-ui";
 import { useRouter } from "next/navigation";
 
 const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
+  console.log("blog", blog);
   const router = useRouter();
-
-  //타이틀, 날짜, 설명, git, slug 링크, 태그 필요.
-  //이미지는 태그의 첫번째에 해당하는 부분으로 스태틱파일 선정.
-
   return (
     <>
       <div className="cursor-pointer group overflow-hidden dark:text-light border border-grayLight rounded-md p-7 bg-grayLight shadow-md">
@@ -32,7 +28,7 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
           </Link>
         </div>
         <section className="mt-10">
-          <div onClick={() => router.push(`/categories/${slug(blog.url)}`)}>
+          <div onClick={() => router.push(`/categories/${blog.url}`)}>
             <Badge
               size="lg"
               text={blog.badges[0].name}
