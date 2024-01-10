@@ -1,5 +1,5 @@
 import GithubSlugger, { slug } from "github-slugger";
-import { getPages } from "@/src/utils/notion.js";
+import { getNotionData } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
 
 import { CATEGORY_OBJ } from "@/src/utils/categoryData";
@@ -12,8 +12,8 @@ const slugger = new GithubSlugger();
 
 const CategoryPage = async ({ params }) => {
   const allCategories = ["all"];
-  const allPosts = await getPages();
-  const blogs = allPosts.results.filter((blog) => {
+  const allPosts = await getNotionData();
+  const blogs = allPosts.filter((blog) => {
     const tags = blog.properties.tag.multi_select;
     return tags.some((tag) => {
       const slugified = tag.name;
@@ -29,7 +29,7 @@ const CategoryPage = async ({ params }) => {
     });
   });
 
-  const count = allPosts.results.map((el) => el.properties.tag.multi_select);
+  const count = allPosts.map((el) => el.properties.tag.multi_select);
 
   const categoryCounts = {};
   count.forEach((category) => {
@@ -45,7 +45,7 @@ const CategoryPage = async ({ params }) => {
         <h1 className="title uppercase"># {params.slug}</h1>
       </div>
       <Categories
-        categories={{ all: allPosts.results.length, ...categoryCounts }}
+        categories={{ all: allPosts.length, ...categoryCounts }}
         currentSlug={params.slug}
       />
 
@@ -68,24 +68,24 @@ const CategoryPage = async ({ params }) => {
 
 export default CategoryPage;
 
-export async function generateStaticParams() {
-  const categories = [];
-  const paths = [{ slug: "all" }];
-  const allPosts = await getPages();
-  allPosts.results.map((blog) => {
-    const tags = blog.properties.tag.multi_select;
-    tags.map((tag) => {
-      let slugified = slugger.slug(tag);
-      //let slugified = tag;
-      if (!categories.includes(slugified)) {
-        categories.push(slugified);
-        paths.push({ slug: slugified });
-      }
-    });
-  });
+//export async function generateStaticParams() {
+//  const categories = [];
+//  const paths = [{ slug: "all" }];
+//  const allPosts = await getPages();
+//  allPosts.map((blog) => {
+//    const tags = blog.properties.tag.multi_select;
+//    tags.map((tag) => {
+//      let slugified = slugger.slug(tag);
+//      //let slugified = tag;
+//      if (!categories.includes(slugified)) {
+//        categories.push(slugified);
+//        paths.push({ slug: slugified });
+//      }
+//    });
+//  });
 
-  return paths;
-}
+//  return paths;
+//}
 
 export async function generateMetadata({ params }) {
   return {

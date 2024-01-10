@@ -74,7 +74,7 @@ export const BADGE_OBJ = {
   default: "light",
   green: "default",
   blue: "success",
-  purple: "success",
+  purple: "progress",
   red: "error",
   yellow: "warning",
   pink: "error",
@@ -94,4 +94,5 @@ export const THUMBNAIL_OBJ = {
   R3f: "/stacks/style.png",
   Emotion: "/stacks/style.png",
   Typescript: "/stacks/ts.png",
+  pwa: "/stacks/pwa.png",
 };

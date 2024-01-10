@@ -21,8 +21,8 @@ const BlogLayoutThree = ({ blog, themeColor, thumbnailImg }) => {
           <Image
             placeholder="blur"
             alt={blog.title}
-            src={thumbnailImg}
-            blurDataURL={thumbnailImg}
+            src={thumbnailImg || "/stacks/js.png"}
+            blurDataURL={thumbnailImg || "/stacks/js.png"}
             width={200}
             height={150}
             className=" aspect-[4/3] w-full h-full object-cover object-center  group-hover:scale-105 transition-all ease duration-300 "
