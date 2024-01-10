@@ -8,7 +8,7 @@ import { Badge, Highlight } from "react-ts-sook-ui";
 import { useRouter } from "next/navigation";
 
 const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
-  console.log("blog", blog);
+  //console.log("blog", blog);
   const router = useRouter();
   return (
     <>
