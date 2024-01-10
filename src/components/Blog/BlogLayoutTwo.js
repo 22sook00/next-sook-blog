@@ -18,8 +18,8 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
           //blurDataURL={blog.image.blurhashDataUrl}
           placeholder="blur"
           alt={blog.title}
-          src={thumbnailImg}
-          blurDataURL={thumbnailImg}
+          src={thumbnailImg || "/stacks/js.png"}
+          blurDataURL={thumbnailImg || "/stacks/js.png"}
           width={200}
           height={150}
           className="aspect-square w-full h-full object-cover object-center group-hover:scale-105 transition-all ease duration-300"

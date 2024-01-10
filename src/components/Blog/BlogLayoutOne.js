@@ -20,8 +20,8 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
         <div className="  w-full h-full  bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10 overflow-hidden">
           <Link href={`/blog/${blog.url}`}>
             <Image
-              src={thumbnailImg}
-              blurDataURL={thumbnailImg}
+              src={thumbnailImg || "/stacks/js.png"}
+              blurDataURL={thumbnailImg || "/stacks/js.png"}
               placeholder="blur"
               alt={blog.title}
               width={200}
