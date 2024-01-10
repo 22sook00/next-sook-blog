@@ -1,13 +1,14 @@
 import { TOKEN, DATABASE_ID, VERSION } from "@/src/config/index.js";
+import { NotionAPI } from "notion-client";
 
-//import "server-only";
-
-//import { Client } from "@notionhq/client";
+import { Client } from "@notionhq/client";
 //import { cache } from "react";
 
-//export const notionClient = new Client({
-//  auth: process.env.TOKEN,
-//});
+export const notionClient = new Client({
+  auth: TOKEN,
+});
+
+//console.log("NOTION_CLI::", notionClient);
 
 //export const getPages = cache(() => {
 //  return notionClient.databases.query({
@@ -34,6 +35,11 @@ import { TOKEN, DATABASE_ID, VERSION } from "@/src/config/index.js";
 //    })
 //    .then((res) => res.results[0]);
 //});
+
+export const notion = new NotionAPI({
+  activeUser: process.env.NOTION_ACTIVE_USER,
+  authToken: process.env.NOTION_TOKEN_V2,
+});
 
 export const getNotionData = async (slug) => {
   const options = {
