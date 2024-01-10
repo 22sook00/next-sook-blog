@@ -24,7 +24,6 @@ const CategoryPage = async ({ params }) => {
         return true;
       }
 
-      //console.log("slugified", params.slug.toUpperCase(), slugified);
       return slugified.toUpperCase() === params.slug.toUpperCase();
     });
   });
