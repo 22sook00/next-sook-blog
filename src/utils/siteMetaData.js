@@ -1,9 +1,10 @@
 // please update required information
 export const siteMetadata = {
-  title: "Next.js Blog With Tailwind CSS and Contentlayer",
+  title: "SookDev",
   author: "22SOOK00",
   headerTitle: "Next.js Blog",
-  description: "A blog created with Next.js, Tailwind.css and contentlayer.",
+  description:
+    "Next.js App router + Tailwind.css + Notion API 로 제작한 기술 블로그 입니다.",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://next-sookdev.vercel.app/",

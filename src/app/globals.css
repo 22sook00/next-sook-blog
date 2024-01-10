@@ -7,7 +7,7 @@
     @apply m-auto px-5 lg:px-8 max-w-[1240px] sm:px-10  flex flex-col items-center justify-between;
   }
   .default-input {
-    @apply text-xs border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2;
+    @apply text-xs border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2  placeholder:text-sm;
   }
   .title {
     @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;

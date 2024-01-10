@@ -1,5 +1,6 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { convertBlogProperties } from "@/src/utils/convert";
 
 const SearchList = ({ filteredSearch, query, handleClose }) => {
   return (
@@ -16,17 +17,15 @@ const SearchList = ({ filteredSearch, query, handleClose }) => {
               className={`z-20 relative  hover:bg-grayLight bg-white e py-2 px-4 text-gray-900`}
             >
               <span className={`block truncate cursor-pointer text-left`}>
-                <Link href={`${keyword.url}`}> {keyword.title}</Link>
+                <Link href={`blog/${convertBlogProperties(keyword).url}`}>
+                  {convertBlogProperties(keyword).title}
+                </Link>
               </span>
             </div>
           ))
         )}
       </div>
-      <div
-        className="
-  animate-showmodal-bg
-  default-fixed flex flex-col justify-center items-center  w-full h-full z-10"
-      >
+      <div className="animate-showmodal-bg default-fixed flex flex-col justify-center items-center  w-full h-full z-10">
         <div
           className="absolute top-0 left-0 w-full h-full overflow-hidden"
           onClick={handleClose}

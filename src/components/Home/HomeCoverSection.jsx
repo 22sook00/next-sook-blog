@@ -3,26 +3,43 @@ import React, { useState } from "react";
 import { sortBlogs } from "@/src/utils";
 import SearchList from "../Search/SearchList";
 import { SearchIcon } from "../Icons";
+import { convertBlogData } from "@/src/utils/convert";
 
 const HomeCoverSection = ({ blogs }) => {
-  const searchArr = sortBlogs(blogs);
+  //console.log(`
+
+  //███████╗ ██████╗  ██████╗ ██╗  ██╗
+  //██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝
+  //███████╗██║   ██║██║   ██║█████╔╝
+  //╚════██║██║   ██║██║   ██║██╔═██╗
+  //███████║╚██████╔╝╚██████╔╝██║  ██╗
+  //╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+
+  //`);
+
+  const searchArr = blogs.map((el) => el.properties);
   const [query, setQuery] = useState("");
   const [isFocus, setIsFocus] = useState(false);
   const filteredSearch =
     query === ""
       ? searchArr
       : searchArr?.filter((keyword) => {
-          return (
-            keyword.title
+          const title = keyword.title.title[0].plain_text;
+          const tags = keyword.tag.multi_select;
+
+          const result =
+            title
               .toLowerCase()
               .replace(/\s+/g, "")
               .includes(query.toLowerCase().replace(/\s+/g, "")) ||
-            [...keyword.tags][0]
+            tags[0].name
               .toLowerCase()
               .replace(/\s+/g, "")
-              .includes(query.toLowerCase().replace(/\s+/g, ""))
-          );
+              .includes(query.toLowerCase().replace(/\s+/g, ""));
+
+          return result;
         });
+
   const handleChange = (e) => {
     setQuery(e.target.value);
     setIsFocus(true);

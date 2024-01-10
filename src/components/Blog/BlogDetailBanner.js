@@ -23,7 +23,6 @@ const BlogDetailBanner = ({ blog, slug: blogSlug }) => {
           </div>
           <div className="flex-col-center gap-2  text-gray text-xs">
             <time>{format(parseISO(blog.publishedAt), "LLLL d, yyyy")}</time>
-            {/*<ViewCounter slug={blogSlug} />*/}
           </div>
         </>
       )}

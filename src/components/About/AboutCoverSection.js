@@ -19,7 +19,6 @@ const AboutCoverSection = () => {
           <h3 className="title">이숙영 </h3>
           <h2 className="title"> 입니다.</h2>
         </div>
-        {/*<p className="">저를 소개하자면</p>*/}
         <ul className="text-sm text-grayDark">
           <li>
             어느덧 개발자로 밥벌이 한지 {getWorkingDate()}년차가 되었군요, 하핫
