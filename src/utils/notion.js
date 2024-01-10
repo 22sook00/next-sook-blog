@@ -4,13 +4,13 @@ import { Client } from "@notionhq/client";
 import { cache } from "react";
 
 export const notionClient = new Client({
-  auth: process.env.NEXT_PUBLIC_NOTION_TOKEN,
+  auth: process.env.NOTION_TOKEN,
 });
 
 //TODO pagination 로직 추가
 export const getPages = cache(() => {
   return notionClient.databases.query({
-    database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
+    database_id: process.env.NOTION_DATABASE_ID,
   });
 });
 
@@ -23,7 +23,7 @@ export const getPageContent = cache((pageId) => {
 export const getPageBySlug = cache((slug) => {
   return notionClient.databases
     .query({
-      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID,
+      database_id: process.env.NOTION_DATABASE_ID,
       filter: {
         property: "slug",
         rich_text: {
