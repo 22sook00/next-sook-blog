@@ -3,10 +3,10 @@
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Fragment } from "react";
 import { Badge, Highlight } from "react-ts-sook-ui";
-
-const BlogLayoutThree = ({ blog, themeColor, thumbnailImg }) => {
+import { BADGE_OBJ } from "@/src/utils/categoryData";
+const BlogLayoutThree = ({ blog, thumbnailImg }) => {
   return (
     <>
       <div
@@ -15,7 +15,7 @@ const BlogLayoutThree = ({ blog, themeColor, thumbnailImg }) => {
     flex flex-col items-center text-default dark:text-light border border-grayLight rounded-md  shadow"
       >
         <Link
-          href={`/blog/${blog.url}`}
+          href={`/post/${blog.url}`}
           className="h-full rounded-xl overflow-hidden"
         >
           <Image
@@ -31,13 +31,26 @@ const BlogLayoutThree = ({ blog, themeColor, thumbnailImg }) => {
         </Link>
 
         <div className="flex flex-col gap-1 w-full mt-4 bg-grayLight p-6 h-[140px]">
-          <Badge text={blog.badges[0].name} theme={themeColor} />
+          <div className="flex gap-2">
+            {blog.badges.map((badge) => {
+              const themeColor = BADGE_OBJ[badge?.color];
+              return (
+                <Fragment key={badge.id}>
+                  <Badge text={badge.name} theme={themeColor} />
+                </Fragment>
+              );
+            })}
+          </div>
 
           <Link
-            href={`/blog/${blog.url}`}
+            href={`/post/${blog.url}`}
             className="inline-block my-1 textEllipsis "
           >
-            <Highlight text={blog.title} theme={themeColor} />
+            <Highlight
+              text={blog.title}
+              theme={BADGE_OBJ[blog.badges[0]?.color]}
+            />
+            {/*<p>{blog.title}</p>*/}
           </Link>
 
           <span className="mt-3 capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">
