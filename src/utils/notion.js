@@ -52,6 +52,18 @@ export const getNotionData = async (slug) => {
     },
     body: JSON.stringify({
       page_size: 100,
+      filter: {
+        property: "status",
+        status: {
+          equals: "published",
+        },
+      },
+      sorts: [
+        {
+          property: "date",
+          direction: "descending",
+        },
+      ],
       ...(slug && {
         filter: {
           property: "slug",
@@ -68,7 +80,6 @@ export const getNotionData = async (slug) => {
   );
 
   const notionData = await res.json();
-  //console.log("RES::", notionData.results[0]);
   return notionData.results;
 };
 
