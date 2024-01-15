@@ -11,9 +11,9 @@ import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import Post from "@/src/components/Posts";
 
-export default async function Page({ params }) {
-  //const post = await getPageBySlug(params.slug);
+const PostPage = async ({ params }) => {
   const post = await getNotionData(params.slug);
+  //console.log("NNN POST", params);
   if (!post) notFound();
   const content = await getNotionContent(post[0].id);
 
@@ -26,11 +26,15 @@ export default async function Page({ params }) {
   const html = await notionRenderer.render(...content);
 
   return (
-    <Post
-      title={post[0].properties.title.title[0].plain_text}
-      badge={post[0].properties.tag.multi_select[0]}
-      date={post[0].properties.date.date}
-      content={html}
-    />
+    <div>
+      <Post
+        title={post[0].properties.title.title[0].plain_text || ""}
+        badge={post[0].properties.tag.multi_select[0]}
+        date={post[0].properties.date.date}
+        content={html}
+      />
+    </div>
   );
-}
+};
+
+export default PostPage;

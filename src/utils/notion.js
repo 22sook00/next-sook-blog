@@ -66,7 +66,9 @@ export const getNotionData = async (slug) => {
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options
   );
+
   const notionData = await res.json();
+  //console.log("RES::", notionData.results[0]);
   return notionData.results;
 };
 

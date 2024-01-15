@@ -10,7 +10,7 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light border border-grayLight rounded-md p-6 bg-grayLight shadow-md">
       <Link
-        href={`/blog/${blog.url}`}
+        href={`/post/${blog.url}`}
         className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"
       >
         <Image
@@ -30,7 +30,7 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
       <section className="col-span-12  lg:col-span-8 w-full h-full">
         <Badge text={blog.badges[0].name} theme={themeColor} />
         <Link
-          href={`/blog/${blog.url}`}
+          href={`/post/${blog.url}`}
           className="inline-block my-1 beforeHighlight"
         >
           <Highlight size="sm" text={blog.title} theme={themeColor} />

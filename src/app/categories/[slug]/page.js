@@ -2,8 +2,7 @@ import GithubSlugger, { slug } from "github-slugger";
 import { getNotionData } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
 
-import { CATEGORY_OBJ } from "@/src/utils/categoryData";
-import { THUMBNAIL_OBJ, BADGE_OBJ } from "@/src/utils/categoryData";
+import { THUMBNAIL_OBJ } from "@/src/utils/categoryData";
 
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
@@ -55,7 +54,7 @@ const CategoryPage = async ({ params }) => {
               thumbnailImg={
                 THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
               }
-              themeColor={BADGE_OBJ[convertBlogData(blog).badges[0]?.color]}
+              //themeColor={BADGE_OBJ[convertBlogData(blog).badges[0]?.color]}
               blog={convertBlogData(blog)}
             />
           </article>

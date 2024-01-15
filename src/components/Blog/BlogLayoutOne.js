@@ -14,7 +14,7 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
     <>
       <div className="cursor-pointer group overflow-hidden dark:text-light border border-grayLight rounded-md p-7 bg-grayLight shadow-md">
         <div className="  w-full h-full  bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10 overflow-hidden">
-          <Link href={`/blog/${blog.url}`}>
+          <Link href={`/post/${blog.url}`}>
             <Image
               src={thumbnailImg || "/stacks/js.png"}
               blurDataURL={thumbnailImg || "/stacks/js.png"}
@@ -35,7 +35,7 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
               theme={themeColor || "success"}
             />
           </div>
-          <Link href={`/blog/${blog.url}`} className="mt-6 beforeHighlight">
+          <Link href={`/post/${blog.url}`} className="mt-6 beforeHighlight">
             <Highlight
               size="lg"
               text={blog.title}
