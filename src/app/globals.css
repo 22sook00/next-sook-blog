@@ -124,3 +124,20 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 li {
   line-height: 22px;
 }
+
+.static-tweet blockquote {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.static-tweet-emoji {
+  height: 1.2em !important;
+  width: 1.2em !important;
+}
+
+.notion__container .notion-header {
+  display: none !important;
+}

@@ -2,7 +2,7 @@ import { TOKEN, DATABASE_ID, VERSION } from "@/src/config/index.js";
 import { NotionAPI } from "notion-client";
 
 import { Client } from "@notionhq/client";
-//import { cache } from "react";
+import { cache } from "react";
 
 export const notionClient = new Client({
   auth: TOKEN,
@@ -10,36 +10,56 @@ export const notionClient = new Client({
 
 //console.log("NOTION_CLI::", notionClient);
 
-//export const getPages = cache(() => {
-//  return notionClient.databases.query({
-//    database_id: process.env.NOTION_DATABASE_ID,
-//  });
-//});
+export const getPages = cache(() => {
+  return notionClient.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
+    filter: {
+      property: "status",
+      status: {
+        equals: "published",
+      },
+    },
+    sorts: [
+      {
+        property: "date",
+        direction: "descending",
+      },
+    ],
+  });
+});
 
-//export const getPageContent = cache((pageId) => {
-//  return notionClient.blocks.children
-//    .list({ block_id: pageId })
-//    .then((res) => res.results);
-//});
+export const getPageContent = cache((pageId) => {
+  return notionClient.blocks.children
+    .list({ block_id: pageId })
+    .then((res) => res.results);
+});
 
-//export const getPageBySlug = cache((slug) => {
-//  return notionClient.databases
-//    .query({
-//      database_id: process.env.NOTION_DATABASE_ID,
-//      filter: {
-//        property: "slug",
-//        rich_text: {
-//          equals: slug,
-//        },
-//      },
-//    })
-//    .then((res) => res.results[0]);
-//});
+export const getPageBySlug = cache((slug) => {
+  return notionClient.databases
+    .query({
+      database_id: process.env.NOTION_DATABASE_ID,
+      filter: {
+        property: "slug",
+        rich_text: {
+          equals: slug,
+        },
+      },
+      sorts: [
+        {
+          property: "date",
+          direction: "descending",
+        },
+      ],
+    })
+    .then((res) => res.results[0]);
+});
 
 export const notion = new NotionAPI({
   activeUser: process.env.NOTION_ACTIVE_USER,
   authToken: process.env.NOTION_TOKEN_V2,
 });
+
+//export const notion = new NotionAPI();
 
 export const getNotionData = async (slug) => {
   const options = {

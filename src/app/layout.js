@@ -1,6 +1,8 @@
 import Script from "next/script";
 import { Inter, Manrope, Rubik } from "next/font/google";
 import "./globals.css";
+import "./notion.css";
+import "./prism-theme.css";
 import { cx } from "@/src/utils";
 import { siteMetadata } from "@/src/utils/siteMetaData.js";
 import Header from "@/src/components/Header";
