@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const { withContentlayer } = require("next-contentlayer");
-
 const nextConfig = {
   compiler: {
-    reactStrictMode: false,
-    //removeConsole: process.env.NODE_ENV === "production",
+    reactStrictMode: true,
     images: {
       domains: [
         "www.notion.so",
+        "images.unsplash.com",
         "https://images.unsplash.com",
         "s3.us-west-2.amazonaws.com",
       ],
@@ -16,4 +14,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withContentlayer({ ...nextConfig });
+module.exports = nextConfig;
