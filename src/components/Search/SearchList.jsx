@@ -17,7 +17,7 @@ const SearchList = ({ filteredSearch, query, handleClose }) => {
               className={`z-20 relative  hover:bg-grayLight bg-white e py-2 px-4 text-gray-900`}
             >
               <span className={`block truncate cursor-pointer text-left`}>
-                <Link href={`blog/${convertBlogProperties(keyword).url}`}>
+                <Link href={`post/${convertBlogProperties(keyword).url}`}>
                   {convertBlogProperties(keyword).title}
                 </Link>
               </span>
