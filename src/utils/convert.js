@@ -6,7 +6,7 @@ export const convertBlogData = (blogs, idx) => {
 export const convertBlogProperties = (blog) => {
   const title = blog.title.title[0].plain_text;
   const badges = blog.tag.multi_select || []; //배열
-  const desc = blog.desc.rich_text[0].plain_text || "";
+  const desc = blog.desc.rich_text[0]?.plain_text || "";
   const date = blog.date.date.start;
   const url = blog.slug.rich_text[0].plain_text;
 

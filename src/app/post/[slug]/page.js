@@ -21,6 +21,13 @@ const PostPage = async ({ params }) => {
   //if (!post) notFound();
   //const content = await getNotionContent(post[0].id);
 
+  const post = await getPageBySlug(params.slug);
+  const rootPageId = post.id;
+  //const content = await getNotionContent(rootPageId);
+
+  if (!post) notFound();
+  const data = await notion.getPage(rootPageId);
+
   //const notionRenderer = new NotionRenderer({
   //  client: notionClient,
   //});
@@ -29,19 +36,14 @@ const PostPage = async ({ params }) => {
   //notionRenderer.use(bookmarkPlugin(undefined));
   //const html = await notionRenderer.render(...content);
 
-  const post = await getPageBySlug(params.slug);
-  const rootPageId = post.id;
-  //console.log("p", post);
-  if (!post) notFound();
-  const data = await notion.getPage(rootPageId);
-  //const content = await getPageContent(post.id);
+  //console.log("html", html);
 
   return (
     <div>
       {/*<Post
-        title={post[0].properties.title.title[0].plain_text || ""}
-        badge={post[0].properties.tag.multi_select[0]}
-        date={post[0].properties.date.date}
+        title={post.properties.title.title[0].plain_text || ""}
+        badge={post.properties.tag.multi_select[0]}
+        date={post.properties.date.date}
         content={html}
       />*/}
       <NotionPage recordMap={data} rootPageId={rootPageId} />

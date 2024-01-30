@@ -69,6 +69,12 @@ export const CATEGORY_OBJ = {
     desc: "에러를 해결한 과정과 경험을 담은 글입니다.",
     type: ["bug", "error", "버그", "에러"],
   },
+  "3d": {
+    theme: "3d",
+    ko: "3D",
+    desc: "3D 로 구현",
+    type: ["3d", "r3f", "trhee.js"],
+  },
 };
 export const BADGE_OBJ = {
   default: "light",
@@ -94,4 +100,5 @@ export const THUMBNAIL_OBJ = {
   "web-app": "/stacks/pwa.png",
   style: "/stacks/style.png",
   typescript: "/stacks/ts.png",
+  "3d": "/stacks/3d.png",
 };
