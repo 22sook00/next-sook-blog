@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "react-ts-sook-ui";
+import Loading from "../Loader/Loading";
 
 export default function ContactForm() {
   const {
@@ -10,20 +11,44 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm();
   const [type, setType] = useState("");
-  const onSubmit = (data) => {
-    //type !== "" && console.log("data", data);
-    if (type !== "") return false;
+
+  //const onSubmit = (data) => {
+  //  if (type !== "") return false;
+  //  const sendingData = {
+  //    ...data,
+  //    reason: type,
+  //  };
+
+  //  sendEmail(sendingData);
+  //};
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendEmail = async (data) => {
+    setIsLoading(true);
+    if (type === "") return false;
     const sendingData = {
       ...data,
       reason: type,
     };
-
-    console.log("sendingData", sendingData);
+    // send email
+    const response = await fetch("api/contact-us", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(sendingData),
+    });
+    console.log("response", response);
+    if (!response.ok) throw new Error("Email send failed");
+    alert("💌 이메일이 성공적으로 발송 됐습니다.");
+    setIsLoading(false);
   };
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(sendEmail)}
       className="w-full
       border border-line rounded p-4
       font-medium leading-relaxed font-in flex  flex-col gap-2"
@@ -120,7 +145,8 @@ export default function ContactForm() {
         "
       >
         {/*노드메일러 구축하기*/}
-        메일 보내기
+        {isLoading ? <Loading /> : <>메일 보내기</>}
+        {/*메일 보내기*/}
       </button>
     </form>
   );
