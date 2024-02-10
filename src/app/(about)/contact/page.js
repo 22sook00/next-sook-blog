@@ -14,7 +14,7 @@ const Contact = () => {
         <LottieAnimation />
       </div>*/}
       <div className="mt-10 w-full  md:w-4/5 md:max-w-[700px] flex flex-col items-start justify-center ">
-        <h2 className="title">Mail to me</h2>
+        <h2 className="title">Reach to me</h2>
         <ContactForm />
       </div>
     </section>

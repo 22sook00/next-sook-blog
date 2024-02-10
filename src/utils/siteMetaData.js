@@ -5,7 +5,7 @@ export const siteMetadata = {
   headerTitle: "Next.js Blog",
   description:
     "Next.js App router + Tailwind.css + Notion API 로 제작한 기술 블로그 입니다.",
-  language: "en-us",
+  language: "ko_kr",
   theme: "system", // system, dark or light
   siteUrl: "https://next-sookdev.vercel.app/",
   siteLogo: "/logo.png",
@@ -14,5 +14,5 @@ export const siteMetadata = {
   github: "https://github.com/22sook00",
   facebook: "https://facebook.com",
   linkedin: "https://www.linkedin.com/in/22sook00/",
-  locale: "en-US",
+  locale: "ko_KR",
 };

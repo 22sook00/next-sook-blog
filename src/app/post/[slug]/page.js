@@ -1,19 +1,11 @@
-import {
-  getNotionContent,
-  notionClient,
-  getNotionData,
-  getPages,
-  getPageContent,
-  getPageBySlug,
-  notion,
-} from "@/src/utils/notion.js";
+import { getPageBySlug, notion } from "@/src/utils/notion.js";
 import { NotionRenderer } from "@notion-render/client";
 import { notFound } from "next/navigation";
 
 //Plugins
 import hljsPlugin from "@notion-render/hljs-plugin";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import Post from "@/src/components/Posts";
+
 import { NotionPage } from "@/src/components/notion";
 
 const PostPage = async ({ params }) => {

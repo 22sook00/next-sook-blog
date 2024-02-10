@@ -16,8 +16,8 @@ const AboutPage = () => {
       <AboutCoverSection />
 
       <Skills />
-      <Projects />
       <Experience />
+      <Projects />
     </div>
   );
 };
