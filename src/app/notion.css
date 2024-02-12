@@ -128,9 +128,9 @@
 .notion-quote {
   padding: 0.2em 0.75em;
   line-height: 1.5;
-  font-style: italic;
-  font-size: 1.2em;
   border-left: 4px solid #67bdfc;
+  font-size: 16px !important;
+  font-style: normal;
 }
 
 .notion-h1,
@@ -145,6 +145,7 @@
 
 .notion-hr {
   margin: 2em 0;
+  border: 0.5px solid #eaeaea;
 }
 
 @media only screen and (max-width: 600px) {
@@ -173,7 +174,6 @@
 
 .notion-collection-row-property .notion-property {
   display: flex;
-  justify-content: center;
 }
 
 .notion-collection-row-value {

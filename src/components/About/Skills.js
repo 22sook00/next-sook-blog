@@ -17,7 +17,7 @@ const Skills = () => {
   return (
     <section className="w-full">
       <h2 className="title ">skills</h2>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
         {SKILL_ARR.map((type) => {
           return (
             <ul

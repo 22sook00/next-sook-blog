@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <section className="w-full">
       <h2 className="title ">Project</h2>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
         {PROJECT_LIST.map((list) => {
           return (
             <div
@@ -27,13 +27,19 @@ const Projects = () => {
               <div>
                 <h1 className="text-lg font-semibold">{list.title}</h1>
                 <p className="text-sm">{list.desc}</p>
-                <Link
-                  href={list.link}
-                  target="_blank"
-                  className="transition-all text-accent hover:text-accentDark text-sm"
-                >
-                  배포 사이트 구경하기
-                </Link>
+                {list.link === "-" ? (
+                  <p className="transition-all text-gray mt-1 text-sm">
+                    진행중인 프로젝트 입니다.
+                  </p>
+                ) : (
+                  <Link
+                    href={list.link}
+                    target="_blank"
+                    className="transition-all text-accent hover:text-accentDark text-sm"
+                  >
+                    배포 사이트 구경하기
+                  </Link>
+                )}
               </div>
             </div>
           );

@@ -47,7 +47,7 @@ const CategoryPage = async ({ params }) => {
         currentSlug={params.slug}
       />
 
-      <div className="grid grid-cols-3 gap-6 min-h-[400px] mt-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 min-h-[400px] mt-6">
         {blogs?.map((blog, index) => (
           <article key={index} className="col-span-1 row-span-1 relative">
             <BlogLayoutThree

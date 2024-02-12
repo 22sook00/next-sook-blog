@@ -13,7 +13,7 @@ const Contact = () => {
       {/*<div className="inline-block w-full sm:w-4/5 md:w-2/5 h-full">
         <LottieAnimation />
       </div>*/}
-      <div className="mt-10 w-full  md:w-4/5 md:max-w-[700px] flex flex-col items-start justify-center ">
+      <div className="mt-24 w-full  md:w-4/5 md:max-w-[700px] flex flex-col items-start justify-center ">
         <h2 className="title">Reach to me</h2>
         <ContactForm />
       </div>
