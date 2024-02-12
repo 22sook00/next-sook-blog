@@ -54,7 +54,7 @@ export default function ContactForm() {
       font-medium leading-relaxed font-in flex  flex-col gap-2"
     >
       <h5>안녕하세요</h5>
-      <div className="flex-row-center justify-start gap-2">
+      <div className="md:flex-row-center justify-start gap-2">
         저는{" "}
         <input
           type="associate"
@@ -74,7 +74,7 @@ export default function ContactForm() {
         입니다.
       </div>
       SookDev 블로그를 보고, 함께
-      <div className="flex-row-center justify-start  gap-2">
+      <div className="md:flex-row-center justify-start  gap-2">
         <button
           type="button"
           onClick={() =>
@@ -84,7 +84,7 @@ export default function ContactForm() {
             type === "sideProject"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } text-sm rounded  h-[34px] px-3 border border-accent`}
+          } mr-2 md:mr-0  text-sm rounded  h-[34px] px-3 border border-accent`}
         >
           사이드 프로젝트를 진행하고
         </button>
@@ -97,7 +97,7 @@ export default function ContactForm() {
             type === "coffeeChat"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } text-sm rounded  h-[34px] px-3 border border-accent`}
+          } mr-2 md:mr-0 text-sm rounded  h-[34px] px-3 border border-accent`}
         >
           커피챗
         </button>
@@ -108,7 +108,7 @@ export default function ContactForm() {
             type === "work"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } text-sm rounded h-[34px] px-3 border border-accent`}
+          } mr-2 md:mr-0 text-sm rounded h-[34px] px-3 border border-accent`}
         >
           일하고
         </button>{" "}

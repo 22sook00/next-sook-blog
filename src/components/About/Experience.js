@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <section className="w-full">
       <h2 className="title ">experience</h2>
-      <div className="grid grid-cols-2 ">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 ">
         <div>
           <h3 className="sub-title">work</h3>
           <div className="flex flex-col gap-2 mb-6">
