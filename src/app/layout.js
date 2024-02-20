@@ -7,6 +7,7 @@ import { cx } from "@/src/utils";
 import { siteMetadata } from "@/src/utils/siteMetaData.js";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -64,6 +65,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content={process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE}
+        />
+        <meta
+          name="naver-site-verification"
+          content={process.env.NEXT_PUBLIC_NAVER_SEARCH_ADVISOR}
+        />
+      </Head>
       <body
         className={cx(
           //rubik.variable,
