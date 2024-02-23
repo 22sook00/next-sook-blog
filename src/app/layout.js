@@ -33,6 +33,16 @@ export const metadata = {
     default: siteMetadata.title, // a default is required when creating a template
   },
   description: siteMetadata.description,
+  keywords: [
+    "블로그",
+    "개발블로그",
+    "쑥데브",
+    "프론트엔드",
+    "프론트엔드개발자",
+    "프론트엔드개발블로그",
+    "Next.js",
+    "tailwindcss",
+  ],
   //https://nextjs.org/docs/app/api-reference/functions/generate-metadata#opengraph
   openGraph: {
     title: siteMetadata.title,
@@ -65,7 +75,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head />
+      <head>
+        <meta
+          name="google-site-verification"
+          content={process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE}
+        />
+        <meta
+          name="naver-site-verification"
+          content={process.env.NEXT_PUBLIC_NAVER_SEARCH_ADVISOR}
+        />
+      </head>
       <body
         className={cx(
           //rubik.variable,
