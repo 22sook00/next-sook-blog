@@ -5,7 +5,7 @@ import "./notion.css";
 import "./prism-theme.css";
 import { cx } from "@/src/utils";
 import { siteMetadata } from "@/src/utils/siteMetaData.js";
-import Head from "./head";
+
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 

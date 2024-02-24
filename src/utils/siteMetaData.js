@@ -2,7 +2,7 @@
 export const siteMetadata = {
   title: "SookDev",
   author: "22SOOK00",
-  headerTitle: "Next.js Blog",
+  headerTitle: "Next.js SookDev Blog",
   description:
     "Next.js App router + Tailwind.css + Notion API 로 제작한 기술 블로그 입니다.",
   language: "ko_kr",
