@@ -8,8 +8,6 @@ export const notionClient = new Client({
   auth: TOKEN,
 });
 
-//console.log("NOTION_CLI::", notionClient);
-
 export const getPages = cache(() => {
   return notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE_ID,
@@ -59,8 +57,6 @@ export const notion = new NotionAPI({
   authToken: process.env.NOTION_TOKEN_V2,
 });
 
-//export const notion = new NotionAPI();
-
 export const getNotionData = async (slug) => {
   const options = {
     method: "POST",
@@ -93,6 +89,7 @@ export const getNotionData = async (slug) => {
         },
       }),
     }),
+    next: { revalidate: 600 },
   };
   const res = await fetch(
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
