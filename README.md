@@ -6,7 +6,7 @@
 🎉 **_SookDev 를 마이그레이션 했어요_** <br/>
 
 
-기존 Gatsby 로 운영되던 기술 블로그를 Next.js App router 로 변경했어요.
+기존 Gatsby 로 운영되던 기술 블로그를 Next.js App router 로 변경했어요. <br/>
 page router 버전과 달라진 형태의 SSR 방식을 적용했어요. 
 
 🚀 **개선된 사항**
@@ -31,5 +31,8 @@ page router 버전과 달라진 형태의 SSR 방식을 적용했어요.
 
 >-  https://next-sookdev.vercel.app/
 
+<br/>
+<br/>
+<br/>
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnext-sookdev.vercel.app&count_bg=%232B96ED&title_bg=%23334155&icon=github.svg&icon_color=%23F4F6F8&title=Thx+%F0%9F%A9%B5&edge_flat=true)](https://hits.seeyoufarm.com)
