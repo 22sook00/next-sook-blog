@@ -10,7 +10,7 @@ import "react-ts-sook-ui/dist/style.css";
 const Tester = () => {
   return (
     <section>
-      <Button onClick={() => setIsOpen(true)} text="SOOK BUTTON" />
+      <Button onClick={() => setIsOpen(true)}>SOOK BUTTON</Button>
       <Badge theme="success" text="SOOK BADGE" />
       <Badge theme="warning" size="sm" text="SOOK BADGE SM" />{" "}
       <Badge size="md" text="SOOK BADGE MD" />{" "}

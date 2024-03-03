@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
-import BlogToc from "../Blog/BlogToc";
 import CommentWidget from "../CommentWidget";
 
 const Code = dynamic(() =>
@@ -35,7 +34,6 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
 
   return (
     <div className="notion__container">
-      {/*<div>hihi</div>*/}
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}

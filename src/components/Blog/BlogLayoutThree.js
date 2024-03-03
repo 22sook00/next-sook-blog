@@ -46,11 +46,7 @@ const BlogLayoutThree = ({ blog, thumbnailImg }) => {
             href={`/post/${blog.url}`}
             className="inline-block my-1 textEllipsis "
           >
-            <Highlight
-              text={blog.title}
-              theme={BADGE_OBJ[blog.badges[0]?.color]}
-            />
-            {/*<p>{blog.title}</p>*/}
+            <Highlight text={blog.title} theme={"success"} />
           </Link>
 
           <span className="mt-3 capitalize text-gray dark:text-light/50 font-semibold text-sm  sm:text-base">

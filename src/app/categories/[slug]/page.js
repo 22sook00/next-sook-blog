@@ -54,7 +54,6 @@ const CategoryPage = async ({ params }) => {
               thumbnailImg={
                 THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
               }
-              //themeColor={BADGE_OBJ[convertBlogData(blog).badges[0]?.color]}
               blog={convertBlogData(blog)}
             />
           </article>

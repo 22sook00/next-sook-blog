@@ -11,6 +11,7 @@ import { CATEGORY_OBJ } from "@/src/utils/categoryData";
 
 const BlogDetailBanner = ({ blog, slug: blogSlug }) => {
   const themeColor = CATEGORY_OBJ[blog.tags[0]]?.theme;
+
   return (
     <div className="mt-20 text-center relative w-full h-[310px] ">
       {blog && (

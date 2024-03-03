@@ -61,7 +61,7 @@ export const CATEGORY_OBJ = {
     theme: "light",
     ko: "CI/CD",
     desc: "배포, CI/CD 인프라에 관한 기록입니다.",
-    type: ["CI/CD", "deploy", "배포", "github action", "깃허브액션"],
+    type: ["CI/CD", "git", "deploy", "배포", "github action", "깃허브액션"],
   },
   bug: {
     theme: "error",
@@ -78,6 +78,7 @@ export const CATEGORY_OBJ = {
 };
 export const BADGE_OBJ = {
   default: "light",
+  gray: "light",
   green: "default",
   blue: "success",
   purple: "progress",

@@ -14,24 +14,22 @@ const RecentPosts = ({ blogs }) => {
         <Link
           href="/categories/all"
           className="inline-block text-lg 
-          underline underline-offset-2 "
+          hover:underline hover:transition-all underline-offset-2 text-accent "
         >
           더 보기
         </Link>
       </div>
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-16 mt-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 mt-4">
         {sortBlogs(blogs)
           .slice(0, 6)
           .map((blog, index) => {
-            //console.log("blog", blog);
             return (
               <article key={index} className="col-span-1 row-span-1 relative">
                 <BlogLayoutThree
                   thumbnailImg={
                     THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
                   }
-                  //themeColor={BADGE_OBJ[convertBlogData(blog).badges[0]?.color]}
                   blog={convertBlogData(blog)}
                 />
               </article>

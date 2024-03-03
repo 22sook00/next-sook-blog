@@ -12,8 +12,9 @@ const Category = ({ link = "#", name, active, length, ...props }) => {
       onClick={() => router.push(`${link}`)}
       size="sm"
       theme="success"
-      text={`${name.toUpperCase()} (${length}) `}
-    />
+    >
+      {name.toUpperCase()} ({length})
+    </Button>
   );
 };
 

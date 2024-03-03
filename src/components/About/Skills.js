@@ -1,15 +1,14 @@
 const SKILL_LIST = {
-  "Language & Framework": ["next.js", "javaScript", "typescript"],
-  Library: ["react", "react-query", "recoil", "redux-toolkit"],
-  "Style&Animation": [
-    "tailwind css",
-    "emotion",
-    "storybook",
-    "scss",
-    "three.js",
-    "r3f",
+  Language: ["javaScript", "typescript"],
+  "SPA Framework": [
+    "react",
+    "next.js",
+    "react-query",
+    "recoil",
+    "redux-toolkit",
   ],
-  "DevOps & Tool": ["github-action", "AWS", "Vercel", "Jira", "Figma"],
+  Style: ["tailwindcss", "styled-component", "emotion", "storybook", "scss"],
+  ETC: ["github-action", "AWS", "Vercel", "firebase", "Jira", "Figma"],
 };
 
 const Skills = () => {

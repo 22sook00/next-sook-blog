@@ -12,10 +12,6 @@
   line-height: 1.65;
 }
 
-/* .index-page {
-  --notion-max-width: 900px;
-} */
-
 .notion-text {
   padding: 0.5em 2px;
 }
@@ -168,6 +164,9 @@
   padding-bottom: 1em;
 }
 
+.notion-collection-page-properties {
+  display: none;
+}
 .notion-collection-page-properties .notion-collection-column-title {
   display: none;
 }

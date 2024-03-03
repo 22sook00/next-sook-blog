@@ -42,6 +42,7 @@ export const metadata = {
     "프론트엔드개발블로그",
     "Next.js",
     "tailwindcss",
+    "SookDev",
   ],
   //https://nextjs.org/docs/app/api-reference/functions/generate-metadata#opengraph
   openGraph: {
