@@ -51,7 +51,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit(sendEmail)}
       className="w-full
       border border-line rounded p-4
-      font-medium leading-relaxed font-in flex  flex-col gap-2"
+      font-medium leading-relaxed flex  flex-col gap-2"
     >
       <h5>안녕하세요</h5>
       <div className="md:flex-row-center justify-start gap-2">

@@ -1,4 +1,5 @@
 import Script from "next/script";
+import localFont from "next/font/local";
 import { Inter, Manrope, Rubik } from "next/font/google";
 import "./globals.css";
 import "./notion.css";
@@ -9,21 +10,47 @@ import { siteMetadata } from "@/src/utils/siteMetaData.js";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 
-const rubik = Rubik({
-  subsets: ["latin"],
+const pretendard = localFont({
+  src: [
+    {
+      path: "../../public/asset/Pretendard-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/asset/Pretendard-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  subsets: ["sans-serif"],
+  variable: "--font-pretendard",
   display: "swap",
-  variable: "--font-in",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-mr",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-mr",
 });
 
 export const metadata = {
@@ -87,10 +114,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
+        lang="ko_KR"
         className={cx(
-          //rubik.variable,
-          inter.variable,
-          "font-mr bg-light dark:bg-dark text-default"
+          pretendard.variable,
+          "font-pretendard bg-light dark:bg-dark text-default"
         )}
       >
         {/*https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection*/}

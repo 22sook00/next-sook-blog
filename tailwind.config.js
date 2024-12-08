@@ -23,8 +23,7 @@ module.exports = {
         line: "#e5e7eb",
       },
       fontFamily: {
-        mr: ["var(--font-mr)"],
-        in: ["var(--font-in)"],
+        pretendard: ["var(--font-pretendard)"],
       },
       animation: {
         roll: "roll 24s linear infinite",

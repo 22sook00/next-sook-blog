@@ -10,7 +10,7 @@ const BlogToc = ({ blog }) => {
         <summary className="font-semibold capitalize cursor-pointer">
           Table Of Content
         </summary>
-        <ul className="mt-4 font-in text-sm ">
+        <ul className="mt-4 font-pretendard text-sm ">
           {blog.toc.map((heading) => {
             return (
               <li key={`#${heading.slug}`} className="py-1">
