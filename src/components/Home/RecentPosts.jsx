@@ -1,9 +1,9 @@
 "use client";
-import { sortBlogs } from "@/src/utils";
-import { THUMBNAIL_OBJ, BADGE_OBJ } from "@/src/utils/categoryData";
-import { convertBlogData } from "@/src/utils/convert";
 import Link from "next/link";
 import React from "react";
+import { sortBlogs } from "@/src/utils";
+import { THUMBNAIL_OBJ } from "@/src/utils/categoryData";
+import { convertBlogData } from "@/src/utils/convert";
 import BlogLayoutThree from "../Blog/BlogLayoutThree";
 
 const RecentPosts = ({ blogs }) => {
@@ -23,16 +23,22 @@ const RecentPosts = ({ blogs }) => {
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 mt-4">
         {sortBlogs(blogs)
           .slice(0, 6)
-          .map((blog, index) => {
+          .map((blog) => {
             return (
-              <article key={index} className="col-span-1 row-span-1 relative">
-                <BlogLayoutThree
-                  thumbnailImg={
-                    THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
-                  }
-                  blog={convertBlogData(blog)}
-                />
-              </article>
+              <Link
+                key={`recent-blog-list-${blog.id}`}
+                href={`/post/${blog.id}`}
+                className="h-full rounded-xl overflow-hidden"
+              >
+                <article className="col-span-1 row-span-1 relative">
+                  <BlogLayoutThree
+                    thumbnailImg={
+                      THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
+                    }
+                    blog={convertBlogData(blog)}
+                  />
+                </article>
+              </Link>
             );
           })}
       </div>

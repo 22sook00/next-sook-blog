@@ -1,13 +1,9 @@
-import GithubSlugger, { slug } from "github-slugger";
+import Link from "next/link";
 import { getNotionData } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
-
 import { THUMBNAIL_OBJ } from "@/src/utils/categoryData";
-
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
-
-const slugger = new GithubSlugger();
 
 const CategoryPage = async ({ params }) => {
   const allCategories = ["all"];
@@ -27,36 +23,29 @@ const CategoryPage = async ({ params }) => {
     });
   });
 
-  const count = allPosts.map((el) => el.properties.tag.multi_select);
-
-  const categoryCounts = {};
-  count.forEach((category) => {
-    category.forEach((subCategory) => {
-      categoryCounts[subCategory.name] =
-        (categoryCounts[subCategory.name] || 0) + 1;
-    });
-  });
-
   return (
     <article className="default-layout">
       <div className="w-full flex-col-center items-start mt-24">
         <h1 className="title uppercase"># {params.slug}</h1>
       </div>
-      <Categories
-        categories={{ all: allPosts.length, ...categoryCounts }}
-        currentSlug={params.slug}
-      />
 
+      <Categories allPosts={allPosts} />
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 min-h-[400px] mt-6">
-        {blogs?.map((blog, index) => (
-          <article key={index} className="col-span-1 row-span-1 relative">
-            <BlogLayoutThree
-              thumbnailImg={
-                THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
-              }
-              blog={convertBlogData(blog)}
-            />
-          </article>
+        {blogs?.map((blog) => (
+          <Link
+            key={`blog-list-${blog.id}`}
+            href={`/post/${blog.id}`}
+            className="h-full rounded-xl overflow-hidden"
+          >
+            <article className="col-span-1 row-span-1 relative">
+              <BlogLayoutThree
+                thumbnailImg={
+                  THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
+                }
+                blog={convertBlogData(blog)}
+              />
+            </article>
+          </Link>
         ))}
       </div>
     </article>

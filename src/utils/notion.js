@@ -8,7 +8,12 @@ export const notionClient = new Client({
   auth: TOKEN,
 });
 
-export const getPages = cache(() => {
+export const notion = new NotionAPI({
+  activeUser: process.env.NOTION_ACTIVE_USER,
+  authToken: process.env.NOTION_TOKEN_V2,
+});
+
+export const getPages = () => {
   return notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE_ID,
     filter: {
@@ -24,7 +29,7 @@ export const getPages = cache(() => {
       },
     ],
   });
-});
+};
 
 export const getPageContent = cache((pageId) => {
   return notionClient.blocks.children
@@ -50,11 +55,6 @@ export const getPageBySlug = cache((slug) => {
       ],
     })
     .then((res) => res.results[0]);
-});
-
-export const notion = new NotionAPI({
-  activeUser: process.env.NOTION_ACTIVE_USER,
-  authToken: process.env.NOTION_TOKEN_V2,
 });
 
 export const getNotionData = async (slug) => {
@@ -89,7 +89,7 @@ export const getNotionData = async (slug) => {
         },
       }),
     }),
-    next: { revalidate: 600 },
+    next: { revalidate: 60 },
   };
   const res = await fetch(
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
@@ -117,4 +117,28 @@ export const getNotionContent = async (blockId) => {
   );
   const notionContent = await contentRes.json();
   return notionContent.results;
+};
+
+export const getNotionPageById = async (id) => {
+  const options = {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Notion-Version": `${VERSION}`,
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    next: { revalidate: 60 },
+  };
+
+  const res = await fetch(
+    `https://api.notion.com/v1/blocks/${id}/children`,
+    options
+  );
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch Notion page with id: ${id}`);
+  }
+
+  const notionData = await res.json();
+  return notionData.results;
 };

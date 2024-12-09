@@ -1,12 +1,31 @@
-import { slug } from "github-slugger";
+"use client";
+
 import React from "react";
 import Category from "./Category";
+import { useParams } from "next/navigation";
 
-const Categories = ({ categories, currentSlug }) => {
-  const allCategory = Object.entries(categories);
+const Categories = ({ allPosts }) => {
+  const currentSlug = useParams().slug;
+  const allCategory = allPosts.map((el) => {
+    return { id: el.id, properties: el.properties.tag.multi_select };
+  });
+
+  const categoryCounts = {};
+  allCategory.forEach((category) => {
+    category.properties.forEach((subCategory) => {
+      categoryCounts[subCategory.name] =
+        (categoryCounts[subCategory.name] || 0) + 1;
+    });
+  });
+
+  const categoryList = Object.entries({
+    all: allPosts.length,
+    ...categoryCounts,
+  });
+
   return (
     <div className="flex gap-4 flex-wrap p-8 bg-grayLight my-8 rounded-md shadow-sm w-full ">
-      {allCategory.map((cat) => {
+      {categoryList.map((cat, idx) => {
         const decode = decodeURIComponent(cat[0].replace(/\+/g, " "));
 
         return (

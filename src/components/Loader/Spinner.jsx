@@ -1,6 +1,6 @@
 import React from "react";
 
-const Loading = () => {
+const Spinner = () => {
   return (
     <div className="w-full justify-center flex">
       <svg
@@ -25,4 +25,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default Spinner;

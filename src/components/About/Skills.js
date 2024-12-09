@@ -8,7 +8,15 @@ const SKILL_LIST = {
     "redux-toolkit",
   ],
   Style: ["tailwindcss", "styled-component", "emotion", "storybook", "scss"],
-  ETC: ["github-action", "AWS", "Vercel", "firebase", "Jira", "Figma"],
+  ETC: [
+    "github-action",
+    "Vercel",
+    "AWS",
+    "Click-up",
+    "Notion",
+    "Jira",
+    "Figma",
+  ],
 };
 
 const Skills = () => {

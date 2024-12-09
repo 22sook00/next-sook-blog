@@ -141,3 +141,7 @@ li {
 .notion__container .notion-header {
   display: none !important;
 }
+
+.notion__container .notion-page {
+  width: 780px; /* 원하는 최대 너비로 변경 */
+}
