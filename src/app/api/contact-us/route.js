@@ -7,7 +7,6 @@ import path from "path";
 
 export async function POST(request) {
   const data = await request.json();
-  console.log("SERVER", data);
 
   // get html template
   const htmlFilePath = path.join(

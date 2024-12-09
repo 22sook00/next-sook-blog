@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "react-ts-sook-ui";
-import Loading from "../Loader/Loading";
+import Spinner from "../Loader/Spinner";
 
 export default function ContactForm() {
   const {
@@ -145,7 +145,7 @@ export default function ContactForm() {
         "
       >
         {/*노드메일러 구축하기*/}
-        {isLoading ? <Loading /> : <>메일 보내기</>}
+        {isLoading ? <Spinner /> : <>메일 보내기</>}
         {/*메일 보내기*/}
       </button>
     </form>

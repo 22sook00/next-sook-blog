@@ -1,20 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchList from "../Search/SearchList";
 import { SearchIcon } from "../Icons";
 
 const HomeCoverSection = ({ blogs }) => {
-  //console.log(`
-
-  //███████╗ ██████╗  ██████╗ ██╗  ██╗
-  //██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝
-  //███████╗██║   ██║██║   ██║█████╔╝
-  //╚════██║██║   ██║██║   ██║██╔═██╗
-  //███████║╚██████╔╝╚██████╔╝██║  ██╗
-  //╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
-
-  //`);
-
   const searchArr = blogs?.map((el) => el.properties);
   const [query, setQuery] = useState("");
   const [isFocus, setIsFocus] = useState(false);
