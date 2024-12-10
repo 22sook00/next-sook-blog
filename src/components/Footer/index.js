@@ -13,7 +13,7 @@ const Footer = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <footer className=" default-layout flex-col-center items-end gap-1 mt-1 md:mt-36 mb-20">
+    <footer className=" default-layout flex-col-center items-end gap-1 mt-20 mb-20">
       <Link
         href="https://github.com/22sook00"
         target={"_blank"}
