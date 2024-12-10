@@ -36,10 +36,6 @@ const PostPage = ({ params }) => {
     fetchPageData();
   }, [rootPageId]);
 
-  //if (router.isFallback) {
-  //  return <div>페이지 전환 로딩 중...</div>; // 페이지 전환 시 로딩 UI
-  //}
-
   if (loading) {
     return <Loading />; // 페이지 전환 시 로딩 UI
   }
