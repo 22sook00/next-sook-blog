@@ -11,7 +11,7 @@ const HomeCoverSection = ({ blogs }) => {
     <section className="w-full flex-col-center items-start">
       <h2 className="title">추천 포스팅</h2>
 
-      <div className="w-full grid md:grid-rows-1 md:grid-flow-row grid-rows-2  grid-flow-col md:grid-cols-[minmax(300px,_450px)_1fr] mt-4 gap-6 ">
+      <div className="w-full flex-col g-4 md:grid md:grid-rows-1 md:grid-flow-row grid-rows-2  grid-flow-col md:grid-cols-[minmax(300px,_450px)_1fr] mt-4 gap-6 ">
         <article className=" row-span-2 relative">
           <BlogLayoutOne
             blog={convertBlogData(blogs, 1)}

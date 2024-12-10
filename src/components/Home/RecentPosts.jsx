@@ -14,7 +14,7 @@ const RecentPosts = ({ blogs }) => {
         <Link
           href="/categories/all"
           className="inline-block text-lg 
-          hover:underline hover:transition-all underline-offset-2 text-accent "
+          hover:underline hover:transition-all underline-offset-2 text-accent md:mb-6"
         >
           더 보기
         </Link>

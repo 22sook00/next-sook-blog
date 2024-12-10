@@ -38,12 +38,12 @@ const HomeCoverSection = ({ blogs }) => {
 
   return (
     <section className="">
-      <div className="w-full mt-20  flex-col-center text-center text-grayDark">
+      <div className="w-full mt-10 md:mt-20  flex-col-center text-center text-grayDark">
         <div className="flex gap-2 items-center">
           <h2 className="title ">Hello </h2>
           <h2 className="animate-shake  title">👋🏻</h2>
         </div>
-        <p className="text-lg dark:text-white">
+        <p className="text md:text-lg dark:text-white">
           SookDev 의 기술블로그에 오신것을 환영합니다.
           <br />
           공부한 것들을 기록하고 나누는 공간입니다.

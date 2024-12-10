@@ -19,13 +19,15 @@ const Header = () => {
     <>
       <header
         className="
+        overflow-hidden
         py-4 sticky top-0 left-0
        right-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 border-b 
        border-slate-900/10   bg-white/80 dark:bg-deepDark dark:text-white"
       >
         <div className="default-layout flex-row justify-between">
           <Logo />
-          <button
+          {/*모바일 NAV, TODO : Drawer 로 변경해보기 */}
+          {/*<button
             className="inline-block sm:hidden z-30"
             onClick={toggle}
             aria-label="Hamburger Menu"
@@ -62,8 +64,8 @@ const Header = () => {
                 </span>
               </div>
             </div>
-          </button>
-          {/*모바일 NAV, TODO : Drawer 로 변경해보기 */}
+          </button>*/}
+
           <nav className="xs:hidden sm:flex items-center gap-4">
             <Link href="/categories/all" className="mx-2">
               Category
@@ -74,7 +76,7 @@ const Header = () => {
             <Link href="/contact" className="mx-2">
               Contact
             </Link>
-            <button
+            {/*<button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
               className={cx(
                 "w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1",
@@ -89,7 +91,7 @@ const Header = () => {
               ) : (
                 <SunIcon className={"fill-dark"} />
               )}
-            </button>
+            </button>*/}
           </nav>
         </div>
       </header>

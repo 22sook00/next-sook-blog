@@ -24,7 +24,10 @@ const CommentWidget = () => {
   }, []);
 
   return (
-    <div ref={commentsEl} className="w-full h-fit m-auto px-5 lg:px-0 my-20" />
+    <div
+      ref={commentsEl}
+      className="w-full h-fit m-auto px-5 lg:px-0 md:my-20 my-10"
+    />
   );
 };
 
