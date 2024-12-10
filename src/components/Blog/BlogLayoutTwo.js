@@ -9,11 +9,9 @@ import { Badge, Highlight } from "react-ts-sook-ui";
 const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
   return (
     <Link href={`/post/${blog.url}`}>
-      <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light border border-grayLight rounded-md p-6 bg-grayLight shadow-md">
+      <div className="group grid grid-cols-12 gap-4 items-center text-default dark:text-light border dark:bg-dark dark:border-deepDark border-grayLight rounded-md p-6 bg-grayLight shadow-md">
         <div className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden">
           <Image
-            //src={blog.image.filePath.replace("../public", "")}
-            //blurDataURL={blog.image.blurhashDataUrl}
             placeholder="blur"
             alt={blog.title}
             src={thumbnailImg || "/stacks/js.png"}
@@ -28,7 +26,8 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
         <section className="col-span-12  lg:col-span-8 w-full h-full">
           <Badge text={blog.badges[0].name} theme={themeColor} />
           <div className="inline-block my-1 beforeHighlight">
-            <Highlight size="sm" text={blog.title} theme={"success"} />
+            {blog.title}
+            {/*<Highlight size="sm" text={blog.title} theme={"success"} />*/}
           </div>
 
           <span className="inline-block w-full capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">

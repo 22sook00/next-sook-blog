@@ -18,9 +18,10 @@ const Header = () => {
   return (
     <>
       <header
-        className="py-4 sticky top-0 left-0
+        className="
+        py-4 sticky top-0 left-0
        right-0 z-50 w-full backdrop-blur flex-none transition-colors duration-500 border-b 
-       border-slate-900/10   bg-white/80 dark:bg-dark"
+       border-slate-900/10   bg-white/80 dark:bg-deepDark dark:text-white"
       >
         <div className="default-layout flex-row justify-between">
           <Logo />
@@ -63,7 +64,6 @@ const Header = () => {
             </div>
           </button>
           {/*모바일 NAV, TODO : Drawer 로 변경해보기 */}
-
           <nav className="xs:hidden sm:flex items-center gap-4">
             <Link href="/categories/all" className="mx-2">
               Category

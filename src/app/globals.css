@@ -9,6 +9,9 @@
   .default-input {
     @apply text-xs border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2  placeholder:text-sm;
   }
+  .default-dark {
+    @apply dark:bg-dark dark:text-light;
+  }
   .title {
     @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-6 text-2xl sm:text-3xl  md:text-4xl;
   }

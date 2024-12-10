@@ -28,7 +28,7 @@ const RecentPosts = ({ blogs }) => {
               <Link
                 key={`recent-blog-list-${blog.id}`}
                 href={`/post/${blog.id}`}
-                className="h-full rounded-xl overflow-hidden"
+                className="h-full overflow-hidden"
               >
                 <article className="col-span-1 row-span-1 relative">
                   <BlogLayoutThree

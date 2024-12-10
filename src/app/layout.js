@@ -9,6 +9,7 @@ import { siteMetadata } from "@/src/utils/siteMetaData.js";
 
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
+import ReactQueryProvider from "@/src/provider/ReactQueryProvider";
 
 const pretendard = localFont({
   src: [
@@ -129,7 +130,7 @@ export default function RootLayout({ children }) {
   }`}
         </Script>
         <Header />
-        {children}
+        <ReactQueryProvider>{children}</ReactQueryProvider>
         <Footer />
       </body>
     </html>

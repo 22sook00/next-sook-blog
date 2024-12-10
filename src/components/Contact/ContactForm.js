@@ -86,7 +86,7 @@ export default function ContactForm() {
               : "bg-white text-accentDark"
           } mr-2 md:mr-0  text-sm rounded  h-[34px] px-3 border border-accent`}
         >
-          사이드 프로젝트를 진행하고
+          사이드 프로젝트를 진행
         </button>
         <button
           type="button"
@@ -114,7 +114,8 @@ export default function ContactForm() {
         </button>{" "}
         <p>하고 싶어 연락드립니다.</p>
       </div>
-      <div>관심 있으시면 아래 메일로 회신 부탁드립니다. 감사합니다.</div>
+      <div>관심 있으시면 아래 메일로 회신 부탁드립니다.</div>
+      <div>감사합니다.</div>
       <input
         type="email"
         placeholder="email@email.com"

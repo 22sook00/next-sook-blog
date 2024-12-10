@@ -57,6 +57,7 @@ export const getPageBySlug = cache((slug) => {
     .then((res) => res.results[0]);
 });
 
+//!전체 노션 데이터 가져오기
 export const getNotionData = async (slug) => {
   const options = {
     method: "POST",
@@ -100,6 +101,28 @@ export const getNotionData = async (slug) => {
   return notionData.results;
 };
 
+//!노션 컨텐츠에 대한 정보 데이터
+export const getNotionPageById = async (id) => {
+  const options = {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Notion-Version": `${VERSION}`,
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    next: { revalidate: 60 },
+  };
+
+  const res = await fetch(`https://api.notion.com/v1/pages/${id}`, options);
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch Notion page with id: ${id}`);
+  }
+
+  const notionData = await res.json();
+  return notionData;
+};
+
 export const getNotionContent = async (blockId) => {
   const options = {
     method: "GET",
@@ -117,28 +140,4 @@ export const getNotionContent = async (blockId) => {
   );
   const notionContent = await contentRes.json();
   return notionContent.results;
-};
-
-export const getNotionPageById = async (id) => {
-  const options = {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Notion-Version": `${VERSION}`,
-      Authorization: `Bearer ${TOKEN}`,
-    },
-    next: { revalidate: 60 },
-  };
-
-  const res = await fetch(
-    `https://api.notion.com/v1/blocks/${id}/children`,
-    options
-  );
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch Notion page with id: ${id}`);
-  }
-
-  const notionData = await res.json();
-  return notionData.results;
 };
