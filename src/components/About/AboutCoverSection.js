@@ -25,11 +25,11 @@ const AboutCoverSection = () => {
             <h3 className="title">이숙영 </h3>
             <h2 className="title"> 입니다.</h2>
           </div>
-          <ul className="text-sm text-grayDark flex flex-col gap-1">
-            <li>💻 신기술 사용에 적극적입니다.</li>
+          <ul className="text-sm text-grayDark flex flex-col gap-[6px] dark:text-white ">
             <li>🎨 예쁘고(UI) 편리한것(UX)을 좋아합니다.</li>
-            <li>🛠 빠른 유저경험을 위한 성능개선 공부를 하고 있습니다.</li>
-            <li>💬 네트워킹 / 테크스터디 참여를 좋아합니다. </li>
+            <li>💻 효율적인 개발자 경험(DX) 을 위한 공부를 합니다.</li>
+            <li>🛠 빠른 유저경험을 위한 성능개선에 대해 고민합니다.</li>
+            <li>💬 네트워킹 참여를 좋아합니다. </li>
             <li>🏃🏻‍♀️ 오랜 개발생활을 유지하기 위해 체력을 기르고 있습니다.</li>
             {/*<li>효율적인것을 좋아합니다.</li>
           <li>예쁜것 좋아하구요 해외사이트 많이 돌아다녀 봅니다.</li>*/}

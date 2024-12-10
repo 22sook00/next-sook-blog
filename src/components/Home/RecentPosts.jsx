@@ -14,7 +14,7 @@ const RecentPosts = ({ blogs }) => {
         <Link
           href="/categories/all"
           className="inline-block text-lg 
-          hover:underline hover:transition-all underline-offset-2 text-accent "
+          hover:underline hover:transition-all underline-offset-2 text-accent md:mb-6"
         >
           더 보기
         </Link>
@@ -28,7 +28,7 @@ const RecentPosts = ({ blogs }) => {
               <Link
                 key={`recent-blog-list-${blog.id}`}
                 href={`/post/${blog.id}`}
-                className="h-full rounded-xl overflow-hidden"
+                className="h-full overflow-hidden"
               >
                 <article className="col-span-1 row-span-1 relative">
                   <BlogLayoutThree

@@ -25,10 +25,12 @@ const Projects = () => {
                 sizes="(max-width: 1180px) 100vw, 50vw"
               />
               <div>
-                <h1 className="text-lg font-semibold">{list.title}</h1>
-                <p className="text-sm">{list.desc}</p>
+                <h1 className="text-lg font-semibold dark:text-white mb-1">
+                  {list.title}
+                </h1>
+                <p className="text-sm dark:text-light">{list.desc}</p>
                 {list.link === "-" ? (
-                  <p className="transition-all text-gray mt-1 text-sm">
+                  <p className="transition-all text-gray mt-1 text-sm dark:text-gray">
                     진행중인 프로젝트 입니다.
                   </p>
                 ) : (
