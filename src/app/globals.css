@@ -146,5 +146,24 @@ li {
 }
 
 .notion__container .notion-page {
-  width: 780px; /* 원하는 최대 너비로 변경 */
+  width: 860px; /* 원하는 최대 너비로 변경 */
+  font-family: "Pretendard" !important;
+}
+.notion-text {
+  margin: 0 !important;
+  padding: 0px !important;
+  line-height: 30px !important;
+  color: #334155;
+}
+.notion-orange_background {
+  background: #f4f6f8 !important;
+}
+.notion-title,
+.notion-h-title,
+.notion-list,
+.notion-simple-table-cell {
+  color: #334155;
+}
+.notion-h2 {
+  margin-bottom: 10px !important;
 }
