@@ -109,11 +109,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   font-size: 1rem;
   color: #747474;
 }
-.beforeHighlight {
-  > div > div > h2 {
-    white-space: pre-line !important;
-  }
-}
+
 .textEllipsis {
   > div > div {
     padding: 0 !important;
@@ -153,7 +149,7 @@ li {
   margin: 0 !important;
   padding: 0px !important;
   line-height: 30px !important;
-  color: #334155;
+  color: #0f172a;
 }
 .notion-orange_background {
   background: #f4f6f8 !important;
@@ -162,7 +158,7 @@ li {
 .notion-h-title,
 .notion-list,
 .notion-simple-table-cell {
-  color: #334155;
+  color: #0f172a;
 }
 .notion-h2 {
   margin-bottom: 10px !important;

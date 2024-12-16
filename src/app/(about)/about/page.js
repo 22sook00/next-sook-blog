@@ -11,7 +11,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="mt-24 flex-col-center gap-28">
+    <div className="mt-10 md:mt-24 flex-col-center gap-8 md:gap-28">
       <AboutCoverSection />
       <Skills />
       <Experience />

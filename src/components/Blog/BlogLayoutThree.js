@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { Fragment } from "react";
 import { Badge, Highlight } from "react-ts-sook-ui";
 import { BADGE_OBJ } from "@/src/utils/categoryData";
-const BlogLayoutThree = ({ blog, thumbnailImg }) => {
+const BlogLayoutThree = ({ blog, thumbnailImg, isPriority = false }) => {
   return (
     <div className="group h-[350px] flex flex-col items-center text-default dark:text-light border border-grayLight dark:border-deepDark rounded-md shadow  overflow-hidden">
       <div className="h-full ">
@@ -19,6 +19,8 @@ const BlogLayoutThree = ({ blog, thumbnailImg }) => {
           height={200}
           className=" aspect-[4/1] w-full h-full object-cover object-center  group-hover:scale-105 transition-all ease duration-300 "
           sizes="(max-width: 640px) 100vw,(max-width: 1024px) 50vw, 33vw"
+          priority={isPriority}
+          format={"image/avif"}
         />
       </div>
 

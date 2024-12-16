@@ -4,7 +4,7 @@ import React from "react";
 const Experience = () => {
   return (
     <section className="w-full">
-      <h2 className="title ">experience</h2>
+      <h2 className="title mb-4 md:mb-0">experience</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 ">
         <div>
           <h3 className="sub-title">work</h3>
@@ -32,11 +32,16 @@ const Experience = () => {
           <div className="flex flex-col gap-2 ">
             {Object.entries(INVOLVED_OBJ).map((list) => {
               return (
-                <div className="flex gap-2" key={`involved-${list[0]}`}>
+                <div
+                  className="flex gap-2 items-center"
+                  key={`involved-${list[0]}`}
+                >
                   <span className="bg-grayLight text-center py-1 w-[115px] rounded text-xs ">
                     {list[0]}
                   </span>
-                  <span className="text-sm dark:text-white">{list[1]}</span>
+                  <span className="text-[13px] md:text-sm dark:text-white">
+                    {list[1]}
+                  </span>
                 </div>
               );
             })}

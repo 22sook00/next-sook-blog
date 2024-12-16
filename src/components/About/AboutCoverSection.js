@@ -1,27 +1,29 @@
 import Image from "next/image";
 import React from "react";
-import profileCharacter from "../../../public/character.png";
-//import { getWorkingDate } from "@/src/utils/dateData.js";
 
+const PROFILE_IMG =
+  "https://next-sookdev.s3.us-east-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2022-11-05+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+8.34.58.png";
 const AboutCoverSection = () => {
   return (
     <>
       <section className="w-full sm:block md:flex  justify-start items-start gap-4 text-default dark:text-light">
         <div>
-          <h2 className="title">Introduce</h2>
+          <h2 className="title mb-4 md:mb-0">Introduce</h2>
           <Image
-            src={profileCharacter}
+            src={PROFILE_IMG}
             alt="22SOOK00"
             className="sm:w-full md:w-[250px] h-[250px] object-cover object-center border-2 border-grayLight shadow-lg rounded-lg"
             priority
+            width={335}
+            height={200}
             sizes="(max-width: 768px) 100vw,(max-width: 1180px) 50vw, 50vw"
           />
         </div>
-        <div className="sm:w-full md:w-1/2 flex flex-col text-left items-start justify-center px-5 ">
+        <div className="sm:w-full md:w-1/2 flex flex-col text-left items-start justify-center md:px-5 ">
           <h2 className="text-xl mt-10 md:mt-[70px] mb-3">
             프론트엔드 개발자,
           </h2>
-          <div className="flex items-end gap-2">
+          <div className="flex items-end gap-2 mb-4 md:mb-0">
             <h3 className="title">이숙영 </h3>
             <h2 className="title"> 입니다.</h2>
           </div>

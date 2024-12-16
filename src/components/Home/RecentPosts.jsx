@@ -1,10 +1,13 @@
 "use client";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+
 import { sortBlogs } from "@/src/utils";
 import { THUMBNAIL_OBJ } from "@/src/utils/categoryData";
 import { convertBlogData } from "@/src/utils/convert";
-import BlogLayoutThree from "../Blog/BlogLayoutThree";
+
+const BlogLayoutThree = dynamic(() => import("../Blog/BlogLayoutThree"));
 
 const RecentPosts = ({ blogs }) => {
   return (
