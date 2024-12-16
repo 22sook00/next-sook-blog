@@ -4,7 +4,7 @@ import React from "react";
 const Experience = () => {
   return (
     <section className="w-full">
-      <h2 className="title mb-4 md:mb-0">experience</h2>
+      <h2 className="title mb-4 md:mb-6 ">experience</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 ">
         <div>
           <h3 className="sub-title">work</h3>

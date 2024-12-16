@@ -6,7 +6,7 @@ import React from "react";
 const Projects = () => {
   return (
     <section className="w-full">
-      <h2 className="title mb-4 md:mb-0">Project</h2>
+      <h2 className="title mb-4 md:mb-6">Project</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
         {PROJECT_LIST.map((list) => {
           return (

@@ -8,7 +8,7 @@ const AboutCoverSection = () => {
     <>
       <section className="w-full sm:block md:flex  justify-start items-start gap-4 text-default dark:text-light">
         <div>
-          <h2 className="title mb-4 md:mb-0">Introduce</h2>
+          <h2 className="title mb-4 md:mb-6">Introduce</h2>
           <Image
             src={PROFILE_IMG}
             alt="22SOOK00"
