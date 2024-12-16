@@ -25,7 +25,7 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
 
         <section className="col-span-12  lg:col-span-8 w-full h-full">
           <Badge text={blog.badges[0].name} theme={themeColor} />
-          <div className="inline-block my-1 beforeHighlight">
+          <div className="inline-block my-1 ">
             {blog.title}
             {/*<Highlight size="sm" text={blog.title} theme={"success"} />*/}
           </div>

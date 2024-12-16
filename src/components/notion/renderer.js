@@ -3,10 +3,7 @@ import { NotionRenderer } from "react-notion-x";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import "react-notion-x/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
-import "katex/dist/katex.min.css";
-import CommentWidget from "../CommentWidget";
+const CommentWidget = dynamic(() => import("../CommentWidget"));
 
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then((m) => m.Code)
@@ -37,7 +34,6 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
-        //darkMode={true}
         rootPageId={rootPageId}
         previewImages
         components={{

@@ -1,7 +1,8 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
-import BlogLayoutTwo from "../Blog/BlogLayoutTwo";
-import { sortBlogs } from "@/src/utils";
+
+const BlogLayoutTwo = dynamic(() => import("../Blog/BlogLayoutTwo"));
 
 import { BADGE_OBJ, THUMBNAIL_OBJ } from "@/src/utils/categoryData";
 import { convertBlogData } from "@/src/utils/convert";

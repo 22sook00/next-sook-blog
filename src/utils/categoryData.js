@@ -88,18 +88,21 @@ export const BADGE_OBJ = {
 };
 
 export const THUMBNAIL_OBJ = {
-  "bug-fix": "/stacks/bug.png",
-  cicd: "/stacks/cicd.png",
-  deploy: "/stacks/cicd.png",
-  git: "/stacks/cicd.png",
-  network: "/stacks/cs.png",
-  "next.js": "/stacks/framework.png",
-  seo: "/stacks/framework.png",
-  javascript: "/stacks/js.png",
-  react: "/stacks/library.png",
-  library: "/stacks/library.png",
-  "web-app": "/stacks/pwa.png",
-  style: "/stacks/style.png",
-  typescript: "/stacks/ts.png",
+  "bug-fix": "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/bug.png",
+  cicd: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/cicd.png",
+  deploy: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/cicd.png",
+  git: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/cicd.png",
+  network: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/cs.png",
+  "next.js":
+    "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/framework.png",
+  seo: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/framework.png",
+  javascript: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/js.png",
+  react: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/library.png",
+  library: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/library.png",
+  "web-app": "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/pwa.png",
+  style: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/style.png",
+  typescript: "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/ts.png",
   "3d": "/stacks/3d.png",
+  productivity:
+    "https://next-sookdev.s3.us-east-2.amazonaws.com/stack/framework.png",
 };

@@ -6,13 +6,13 @@ import React from "react";
 const Projects = () => {
   return (
     <section className="w-full">
-      <h2 className="title ">Project</h2>
+      <h2 className="title mb-4 md:mb-6">Project</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
         {PROJECT_LIST.map((list) => {
           return (
             <div
               className=" w-full h-[300px] transition-all text-left rounded-md shadow-md hover:shadow-lg p-4 flex flex-col flex-start gap-2"
-              key={list.ie}
+              key={list.id}
             >
               <Image
                 blurDataURL={list.img}
@@ -29,11 +29,13 @@ const Projects = () => {
                   {list.title}
                 </h1>
                 <p className="text-sm dark:text-light">{list.desc}</p>
-                {list.link === "-" ? (
+                {list.link === "-" && (
                   <p className="transition-all text-gray mt-1 text-sm dark:text-gray">
                     진행중인 프로젝트 입니다.
                   </p>
-                ) : (
+                )}
+
+                {list.link !== "-" && list.code !== "sookDevBlog" && (
                   <Link
                     href={list.link}
                     target="_blank"

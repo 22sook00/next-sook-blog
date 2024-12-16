@@ -1,6 +1,6 @@
 const SKILL_LIST = {
   Language: ["javaScript", "typescript"],
-  "SPA Framework": [
+  "Framework & Library": [
     "react",
     "next.js",
     "react-query",
@@ -19,11 +19,11 @@ const SKILL_LIST = {
   ],
 };
 
+const SKILL_ARR = Object.entries(SKILL_LIST);
 const Skills = () => {
-  const SKILL_ARR = Object.entries(SKILL_LIST);
   return (
     <section className="w-full">
-      <h2 className="title ">skills</h2>
+      <h2 className="title mb-4 md:mb-6">skills</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
         {SKILL_ARR.map((type) => {
           return (

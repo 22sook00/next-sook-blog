@@ -4,7 +4,7 @@ import { format } from "date-fns";
 
 import Link from "next/link";
 import Image from "next/image";
-import { Badge, Highlight } from "react-ts-sook-ui";
+import { Badge } from "react-ts-sook-ui";
 import { useRouter } from "next/navigation";
 
 const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
@@ -22,7 +22,9 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
               width={200}
               height={150}
               className=" w-full h-full object-center object-cover overflow-hidden group-hover:scale-105 transition-all ease duration-300"
-              sizes="(max-width: 1180px) 100vw, 50vw"
+              sizes="(max-width: 600px) 100vw, (max-width: 1180px) 50vw, 33vw"
+              priority
+              format={"image/avif"}
             />
           </>
         </div>
@@ -34,10 +36,7 @@ const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
               theme={themeColor || "success"}
             />
           </div>
-          <div className=" beforeHighlight">
-            {/*<Highlight size="lg" text={blog.title} theme={"success"} />*/}
-            {blog.title}
-          </div>
+          <div className=" inline-block my-1">{blog.title}</div>
           <span className="inline-block w-full capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">
             {format(new Date(blog.date), "MMMM dd, yyyy")}
           </span>
