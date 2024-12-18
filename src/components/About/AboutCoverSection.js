@@ -8,14 +8,14 @@ const AboutCoverSection = () => {
     <>
       <section className="w-full  gap-8 text-default dark:text-light">
         <h2 className="title mb-4 md:mb-6">Introduce</h2>
-        <div className="flex md:flex-row flex-col gap-6 md:gap-8 items-center">
+        <div className="flex gap-6 md:flex-row flex-col items-center md:gap-8 ">
           <Image
             src={PROFILE_IMG}
-            alt="22SOOK00"
-            className="sm:w-full md:w-[250px] h-[250px] object-cover object-center  rounded-lg"
+            alt="profile-img"
+            className="w-full md:w-[250px] h-[250px] object-cover object-center rounded-lg"
             priority
-            width={335}
-            height={200}
+            width={250}
+            height={250}
             sizes="(max-width: 768px) 100vw,(max-width: 1180px) 50vw, 50vw"
             placeholder="blur"
             blurDataURL={PROFILE_IMG}

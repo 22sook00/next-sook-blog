@@ -37,17 +37,15 @@ const CategoryPage = async ({ params }) => {
           <Link
             key={`blog-list-${blog.id}`}
             href={`/post/${blog.id}`}
-            className="h-full rounded-xl overflow-hidden"
+            className="h-full rounded-xl"
           >
-            <article className="col-span-1 row-span-1 relative">
-              <BlogLayoutThree
-                thumbnailImg={
-                  THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
-                }
-                blog={convertBlogData(blog)}
-                isPriority={idx === 1 || idx === 2 || idx === 3}
-              />
-            </article>
+            <BlogLayoutThree
+              thumbnailImg={
+                THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
+              }
+              blog={convertBlogData(blog)}
+              isPriority={idx === 1 || idx === 2 || idx === 3}
+            />
           </Link>
         ))}
       </div>

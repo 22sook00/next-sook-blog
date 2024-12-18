@@ -48,12 +48,6 @@ module.exports = {
           },
         },
       },
-      screens: {
-        sxl: "1180px",
-        // @media (min-width: 1180px){...}
-        sm: "480px",
-        // @media (min-width: 480px){...}
-      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],

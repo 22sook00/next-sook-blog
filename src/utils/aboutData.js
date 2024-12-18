@@ -12,7 +12,7 @@ export const PROJECT_LIST = [
   {
     id: 1,
     title: "SookDev 블로그",
-    desc: "기존 개츠비에서 운영하던 블로그에서 Next.js 앱라우터 버전으로 마이그레이션 한 테크 기록 블로그 입니다.",
+    desc: "Gatsby 기반으로 운영하던 블로그에서 Next.js 앱라우터 버전으로 마이그레이션 한 기술 블로그 입니다.",
     code: "sookDevBlog",
     stack: ["next.js", "javascript", "tailwindcss", "github-action", "vercel"],
     link: "/",
