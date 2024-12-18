@@ -24,7 +24,11 @@ const Categories = ({ allPosts }) => {
   });
 
   return (
-    <div className="flex gap-4 flex-wrap p-8 bg-grayLight my-8 rounded-md shadow-sm w-full ">
+    <div
+      className="flex gap-4 flex-wrap rounded-md shadow-sm w-full bg-grayLight 
+       my-0 md:my-8 p-6
+    "
+    >
       {categoryList.map((cat, idx) => {
         const decode = decodeURIComponent(cat[0].replace(/\+/g, " "));
 

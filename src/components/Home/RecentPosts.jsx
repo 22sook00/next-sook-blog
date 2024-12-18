@@ -17,9 +17,9 @@ const RecentPosts = ({ blogs }) => {
         <Link
           href="/categories/all"
           className="inline-block text-lg 
-          hover:underline hover:transition-all underline-offset-2 text-accent md:mb-6"
+          underline underline-offset-4 text-accent mb-4 md:mb-6 font-medium"
         >
-          더 보기
+          더보기
         </Link>
       </div>
 
@@ -31,9 +31,9 @@ const RecentPosts = ({ blogs }) => {
               <Link
                 key={`recent-blog-list-${blog.id}`}
                 href={`/post/${blog.id}`}
-                className="h-full overflow-hidden"
+                className="h-full"
               >
-                <article className="col-span-1 row-span-1 relative">
+                <article className="col-span-1 row-span-1 ">
                   <BlogLayoutThree
                     thumbnailImg={
                       THUMBNAIL_OBJ[convertBlogData(blog).badges[0]?.name]
