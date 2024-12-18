@@ -11,7 +11,7 @@ const Projects = () => {
         {PROJECT_LIST.map((list) => {
           return (
             <div
-              className=" w-full h-[300px] transition-all text-left rounded-md shadow-md hover:shadow-lg p-4 flex flex-col flex-start gap-2"
+              className=" w-full h-[300px] transition-all text-left rounded-md shadow-md hover:shadow-lg p-4 flex flex-col flex-start gap-2 border border-grayLight"
               key={list.id}
             >
               <Image

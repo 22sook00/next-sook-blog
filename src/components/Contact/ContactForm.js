@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "react-ts-sook-ui";
+
 import Spinner from "../Loader/Spinner";
 
 export default function ContactForm() {
@@ -9,18 +9,8 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onChange" });
   const [type, setType] = useState("");
-
-  //const onSubmit = (data) => {
-  //  if (type !== "") return false;
-  //  const sendingData = {
-  //    ...data,
-  //    reason: type,
-  //  };
-
-  //  sendEmail(sendingData);
-  //};
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -40,11 +30,13 @@ export default function ContactForm() {
       },
       body: JSON.stringify(sendingData),
     });
-    console.log("response", response);
+
     if (!response.ok) throw new Error("Email send failed");
     alert("💌 이메일이 성공적으로 발송 됐습니다.");
     setIsLoading(false);
   };
+
+  console.log("ER", errors);
 
   return (
     <form
@@ -53,8 +45,8 @@ export default function ContactForm() {
       border border-line rounded p-4
       font-medium leading-relaxed flex  flex-col gap-2"
     >
-      <h5>안녕하세요</h5>
-      <div className="md:flex-row-center justify-start gap-2">
+      <h5>안녕하세요 🙇🏻‍♀️</h5>
+      <div className="flex-row-center justify-start gap-2 flex-wrap">
         저는{" "}
         <input
           type="associate"
@@ -74,7 +66,7 @@ export default function ContactForm() {
         입니다.
       </div>
       SookDev 블로그를 보고, 함께
-      <div className="md:flex-row-center justify-start  gap-2">
+      <div className="flex-row-center justify-start  gap-2 flex-wrap">
         <button
           type="button"
           onClick={() =>
@@ -84,7 +76,7 @@ export default function ContactForm() {
             type === "sideProject"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } mr-2 md:mr-0  text-sm rounded  h-[34px] px-3 border border-accent`}
+          }  text-sm rounded  h-[34px] px-3 border border-accent`}
         >
           사이드 프로젝트를 진행
         </button>
@@ -97,7 +89,7 @@ export default function ContactForm() {
             type === "coffeeChat"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } mr-2 md:mr-0 text-sm rounded  h-[34px] px-3 border border-accent`}
+          } text-sm rounded  h-[34px] px-3 border border-accent`}
         >
           커피챗
         </button>
@@ -108,7 +100,7 @@ export default function ContactForm() {
             type === "work"
               ? "bg-accent text-white"
               : "bg-white text-accentDark"
-          } mr-2 md:mr-0 text-sm rounded h-[34px] px-3 border border-accent`}
+          }  text-sm rounded h-[34px] px-3 border border-accent`}
         >
           일하고
         </button>{" "}
@@ -118,19 +110,24 @@ export default function ContactForm() {
       <div>감사합니다.</div>
       <input
         type="email"
-        placeholder="email@email.com"
-        maxLength={30}
-        {...register("email", {})}
+        placeholder="이메일을 입력해 주세요"
+        maxLength={40}
+        {...register("email", {
+          required: "이메일 입력은 필수입니다",
+          pattern: {
+            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: "올바른 이메일 형식을 입력해 주세요.",
+          },
+        })}
         className="default-input"
       />
+      {errors.email && <p className="error-text">{errors.email.message}</p>}
       <textarea
         {...register("details", {})}
-        placeholder="추가로 전달하고 싶은 내용이 있으시면 작성 해 주세요 🙌🏻"
+        placeholder="추가로 전달하고 싶은 내용이 있으시면 작성해 주세요 🙌🏻"
         rows={5}
         className="
-        default-input
-        resize-none mt-4
-         "
+        default-input h-28 resize-none "
       />
       <button
         type="submit"

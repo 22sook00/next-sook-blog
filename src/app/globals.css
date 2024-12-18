@@ -7,13 +7,13 @@
     @apply m-auto px-5 lg:px-8 max-w-[1240px] sm:px-10  flex flex-col items-center justify-between;
   }
   .default-input {
-    @apply text-xs border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2  placeholder:text-sm;
+    @apply text-sm h-10 border border-accentLight focus:border-accentLight focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-[#7abef5] focus:ring-opacity-75 shadow-sm rounded-md p-2  placeholder:text-sm;
   }
   .default-dark {
     @apply dark:bg-dark dark:text-light;
   }
   .title {
-    @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-0 md:mb-6 text-2xl sm:text-3xl  md:text-4xl;
+    @apply w-fit inline-block text-default dark:text-light capitalize font-bold mb-4 md:mb-6 text-2xl sm:text-3xl  md:text-4xl;
   }
   .sub-title {
     @apply w-full inline-block text-default dark:text-light capitalize font-semibold mb-6 text-xl   md:text-2xl;
@@ -25,8 +25,8 @@
     @apply flex items-center justify-center;
   }
 
-  .test-border {
-    @apply border-2 border-red-500;
+  .error-text {
+    @apply text-red-500 text-xs;
   }
 }
 

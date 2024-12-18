@@ -15,7 +15,7 @@ const BlogLayoutThree = ({ blog, thumbnailImg, isPriority = false }) => {
           alt={blog.title}
           src={thumbnailImg || "/stacks/js.png"}
           blurDataURL={thumbnailImg || "/stacks/js.png"}
-          width={300}
+          width={200}
           height={200}
           className=" aspect-[4/1] w-full h-full object-cover object-center  group-hover:scale-105 transition-all ease duration-300 "
           sizes="(max-width: 640px) 100vw,(max-width: 1024px) 50vw, 33vw"

@@ -27,7 +27,7 @@ const CategoryPage = async ({ params }) => {
 
   return (
     <article className="default-layout">
-      <div className="w-full flex-col-center items-start mt-24">
+      <div className="w-full flex-col-center items-start mt-10 md:mt-24 ">
         <h1 className="title uppercase"># {params.slug}</h1>
       </div>
 
