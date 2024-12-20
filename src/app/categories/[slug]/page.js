@@ -3,9 +3,11 @@ import dynamic from "next/dynamic";
 import { getNotionData } from "@/src/utils/notion.js";
 import { convertBlogData } from "@/src/utils/convert";
 import { THUMBNAIL_OBJ } from "@/src/utils/categoryData";
-import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 
-const Categories = dynamic(() => import("@/src/components/Blog/Categories"));
+import Categories from "@/src/components/Blog/Categories";
+const BlogLayoutThree = dynamic(() =>
+  import("@/src/components/Blog/BlogLayoutThree")
+);
 
 const CategoryPage = async ({ params }) => {
   const allCategories = ["all"];
