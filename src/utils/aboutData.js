@@ -36,13 +36,13 @@ export const PROJECT_LIST = [
     link: "https://mandalart-plan.vercel.app/",
     img: "/projects/mandalart.png",
   },
-  {
-    id: 4,
-    title: "청첩장",
-    desc: "고객이 직접 커스터마이징 할 수 있는 모바일 청첩장을 제작했습니다.",
-    code: "weddingCard",
-    stack: ["next.js", "typescript", "tailwindcss", "vite", "react-hook-form"],
-    link: "-",
-    img: "/stacks/framework.png",
-  },
+  //{
+  //  id: 4,
+  //  title: "청첩장",
+  //  desc: "고객이 직접 커스터마이징 할 수 있는 모바일 청첩장을 제작했습니다.",
+  //  code: "weddingCard",
+  //  stack: ["next.js", "typescript", "tailwindcss", "vite", "react-hook-form"],
+  //  link: "-",
+  //  img: "/stacks/framework.png",
+  //},
 ];
