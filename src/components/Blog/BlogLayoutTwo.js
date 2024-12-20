@@ -1,10 +1,11 @@
 "use client";
+import { Fragment } from "react";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Card } from "@/src/components/common/card/Card";
-
+import { BADGE_OBJ } from "@/src/utils/categoryData";
 import { Badge, Highlight } from "react-ts-sook-ui";
 
 const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
@@ -29,13 +30,19 @@ const BlogLayoutTwo = ({ blog, themeColor, thumbnailImg }) => {
 
           <Card.Footer className="mt-2">
             <div className="flex-wrap flex gap-2">
-              <div onClick={() => router.push(`/categories/${blog.url}`)}>
-                <Badge
-                  size="lg"
-                  text={blog.badges[0].name}
-                  theme={themeColor || "success"}
-                />
-              </div>
+              {blog.badges.map((badge) => {
+                const themeColor = BADGE_OBJ[badge?.color];
+
+                return (
+                  <Fragment key={badge.id}>
+                    <Badge
+                      size="sm"
+                      text={badge.name}
+                      theme={themeColor || "primary"}
+                    />
+                  </Fragment>
+                );
+              })}
             </div>
             <p className="mt-2 capitalize text-gray dark:text-light/50 font-semibold  text-xs sm:text-base">
               {format(new Date(blog.date), "MMMM dd, yyyy")}
