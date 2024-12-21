@@ -1,5 +1,5 @@
 import { compareDesc, parseISO } from "date-fns";
-import { convertBlogData, convertBlogProperties } from "./convert";
+import { convertBlogData } from "./convert";
 
 export const cx = (...classNames) => classNames.filter(Boolean).join(" ");
 
