@@ -1,14 +1,19 @@
+import { getBase64 } from "@/src/utils/getBase64";
 import Image from "next/image";
 import React from "react";
 
 const PROFILE_IMG =
   "https://next-sookdev.s3.us-east-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2022-11-05+%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE+8.34.58.png";
-const AboutCoverSection = () => {
+
+const AboutCoverSection = async () => {
+  const { base64 } = await getBase64(PROFILE_IMG);
+
   return (
     <>
       <section className="w-full  gap-8 text-default dark:text-light">
         <h2 className="title mb-4 md:mb-6">Introduce</h2>
-        <div className="flex gap-6 md:flex-row flex-col items-center md:gap-8 ">
+
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-[250px,1fr] items-center md:gap-8 ">
           <Image
             src={PROFILE_IMG}
             alt="profile-img"
@@ -16,9 +21,8 @@ const AboutCoverSection = () => {
             priority
             width={250}
             height={250}
-            sizes="(max-width: 768px) 100vw,(max-width: 1180px) 50vw, 50vw"
             placeholder="blur"
-            blurDataURL={PROFILE_IMG}
+            blurDataURL={base64 || PROFILE_IMG}
           />
           <section className="w-full">
             <p className="text-xl mb-2 text-grayDark">프론트엔드 개발자,</p>

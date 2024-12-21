@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { Card } from "@/src/components/common/card/Card";
 
 const BlogLayoutOne = ({ blog, themeColor, thumbnailImg }) => {
-  console.log("themeColor", themeColor);
   const router = useRouter();
   return (
     <Link href={`/post/${blog.url}`}>
